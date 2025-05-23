@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhmhyq8a0nfvq"]
+
+[ext_resource type="Script" uid="uid://d2y627vsl5dml" path="res://scripts/Game2.gd" id="1_eetn8"]
+[ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_akvk8"]
+[ext_resource type="PackedScene" uid="uid://byfscbtetjtc7" path="res://ui/BookPopup.tscn" id="3_2625v"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_eetn8")
+
+[node name="Monyet" parent="." instance=ExtResource("2_akvk8")]
+position = Vector2(44, 147)
+
+[node name="BookPopup" parent="." instance=ExtResource("3_2625v")]

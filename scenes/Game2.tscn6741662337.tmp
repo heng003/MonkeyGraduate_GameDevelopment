@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhmhyq8a0nfvq"]
+
+[ext_resource type="Script" uid="uid://d2y627vsl5dml" path="res://scripts/Game2.gd" id="1_eetn8"]
+[ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_akvk8"]
+[ext_resource type="PackedScene" uid="uid://byfscbtetjtc7" path="res://ui/BookPopup.tscn" id="3_2625v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eetn8"]
+size = Vector2(94.5, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akvk8"]
+size = Vector2(55, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2625v"]
+size = Vector2(41, 71)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_eetn8")
+
+[node name="Monyet" parent="." instance=ExtResource("2_akvk8")]
+position = Vector2(44, 147)
+
+[node name="BookPopup" parent="." instance=ExtResource("3_2625v")]
+
+[node name="Placeholder1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder1"]
+position = Vector2(209.25, 234)
+shape = SubResource("RectangleShape2D_eetn8")
+
+[node name="Placeholder2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder2"]
+position = Vector2(193, 128)
+shape = SubResource("RectangleShape2D_akvk8")
+
+[node name="Placeholder3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder3"]
+position = Vector2(172, 348)
+shape = SubResource("RectangleShape2D_2625v")
+
+[connection signal="body_entered" from="Placeholder1" to="." method="_on_placeholder_1_body_entered"]
+[connection signal="body_entered" from="Placeholder2" to="." method="_on_placeholder_2_body_entered"]
+[connection signal="body_entered" from="Placeholder3" to="." method="_on_placeholder_3_body_entered"]
