@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bvewrac7g20ac"]
+[gd_scene load_steps=4 format=3 uid="uid://bvewrac7g20ac"]
+
+[ext_resource type="PackedScene" uid="uid://k7rgpvrx1jnw" path="res://ui/DialogueBox.tscn" id="1_dr5xv"]
+[ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
+[ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_yxo61"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_mua0o")
+
+[node name="Monyet" parent="." instance=ExtResource("2_yxo61")]
+position = Vector2(117, 313)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource("1_dr5xv")]
+offset_left = -577.0
+offset_right = 573.0
+grow_horizontal = 2
+grow_vertical = 0

@@ -43,6 +43,7 @@ offset_right = 347.0
 offset_bottom = 280.0
 
 [node name="ContentRight" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
 offset_left = 423.0
 offset_top = 90.0
 offset_right = 554.0

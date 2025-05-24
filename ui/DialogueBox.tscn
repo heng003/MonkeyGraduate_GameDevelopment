@@ -26,7 +26,7 @@ offset_top = -13.925
 offset_right = 20.15
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(0.633757, 0.633757, 0.633757, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 
 [node name="DialogueLabel" type="Label" parent="."]
 layout_mode = 1
@@ -36,6 +36,7 @@ anchor_top = 0.426
 anchor_right = 0.061
 anchor_bottom = 0.426
 offset_left = -22.15
-offset_top = -6.55
+offset_top = -0.550003
 offset_right = 17.85
-offset_bottom = 16.45
+offset_bottom = 27.45
+theme_override_font_sizes/font_size = 20
