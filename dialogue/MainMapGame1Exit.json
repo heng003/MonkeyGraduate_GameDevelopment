@@ -1,0 +1,12 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+	  "text": "Lectures are that easy? I’ve totally got this!",
+	  "next_id": -1
+	}
+  ]
+}

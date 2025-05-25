@@ -1,0 +1,18 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+	  "text": "Okay… deep breaths. Just pretend I know how libraries work.",
+	  "next_id": 1
+	},
+	{
+	  "id": 1,
+	  "name": "Monyet",
+	  "text": "Should I read the books or approach the librarian first?",
+	  "next_id": -1
+	}
+  ]
+}

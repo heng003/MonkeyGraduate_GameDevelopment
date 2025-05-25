@@ -1,25 +1,22 @@
 extends Node2D
 
+@onready var dialogue_manager = $DialogueManager
 @onready var player = $Monyet
-@onready var book_popup = $BookPopup
 
-#var books_content = {
-	#"Placeholder1": {
-		#"left": "UM was established in 1962, making it one of Malaysia's oldest universities.",
-		#"right": "UM has 13 faculties including Engineering, Law, Medicine, and more."
-	#},
-	#"Placeholder2": {
-		#"left": "UM’s main campus is located in Kuala Lumpur with beautiful green spaces.",
-		#"right": "The university offers undergraduate, postgraduate, and doctoral programs."
-	#},
-	#"Placeholder3": {
-		#"left": "UM is known for its strong research in science and technology.",
-		#"right": "Many successful alumni have graduated from UM, making an impact worldwide."
-	#}
-#}
+var entry_dialogue_path = "Game2Entry.json"
+var quiz_dialogue_path = "Game2Quiz.json"
 
 func _ready():
-	pass
+	_play_dialogue(entry_dialogue_path)
 
-func _on_book_popup_closed() -> void:
+func trigger_library_quiz():
+	_play_dialogue(quiz_dialogue_path)
+
+func _play_dialogue(dialogue_path: String) -> void:
+	player.can_move = false
+	dialogue_manager.visible = true
+	dialogue_manager.start_dialogue(dialogue_path)
+	dialogue_manager.dialogue_finished.connect(_on_dialogue_finished)
+
+func _on_dialogue_finished():
 	player.can_move = true

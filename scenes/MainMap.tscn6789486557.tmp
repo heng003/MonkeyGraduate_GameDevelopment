@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://hlsm87vuj55i"]
+[gd_scene load_steps=5 format=3 uid="uid://hlsm87vuj55i"]
 
 [ext_resource type="Script" uid="uid://11vi8y4hu4y4" path="res://scripts/MainMap.gd" id="1_5hgy3"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_a1mhp"]
+[ext_resource type="PackedScene" uid="uid://k7rgpvrx1jnw" path="res://ui/DialogueBox.tscn" id="3_2t08r"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="4_1kkdm"]
 
 [node name="Node2D3" type="Node2D"]
@@ -10,5 +11,7 @@ script = ExtResource("1_5hgy3")
 [node name="Monyet" parent="." instance=ExtResource("2_a1mhp")]
 position = Vector2(48, 52)
 
-[node name="DialogueManager" parent="." instance=ExtResource("4_1kkdm")]
+[node name="DialogueBox" parent="." instance=ExtResource("3_2t08r")]
 visible = false
+
+[node name="DialogueManager" parent="." instance=ExtResource("4_1kkdm")]
