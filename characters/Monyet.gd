@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 200
+const SPEED = 300
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 var last_direction: String = "front"  # default direction
-var can_move: bool = true  # ← Add this line
+var can_move: bool = true  
 
 func _physics_process(_delta):
 	sprite_2d.play()
