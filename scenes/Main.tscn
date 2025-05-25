@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8anjbefbaggp"]
+[gd_scene load_steps=3 format=3 uid="uid://vpkhijgex6cm"]
 
-[ext_resource type="Script" uid="uid://co3aamd4fnsqh" path="res://scripts/SceneLoader.gd" id="1_elqb8"]
-[ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_rvslj"]
+[ext_resource type="Script" path="res://scripts/scene_loader.gd" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://clo0qdq1loed0" path="res://characters/Monyet.tscn" id="2_rvslj"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_elqb8")
@@ -13,6 +13,6 @@ offset_bottom = 31.0
 text = "Start Game"
 
 [node name="Monyet" parent="." instance=ExtResource("2_rvslj")]
-position = Vector2(47, 42)
+position = Vector2(37, 48)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

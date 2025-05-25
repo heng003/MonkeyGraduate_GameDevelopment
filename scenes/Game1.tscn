@@ -1,8 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvewrac7g20ac"]
-
-[ext_resource type="PackedScene" uid="uid://k7rgpvrx1jnw" path="res://ui/DialogueBox.tscn" id="1_dr5xv"]
-[ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
-[ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_yxo61"]
+[gd_scene load_steps=0 format=3 uid="uid://bvewrac7g20ac"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_mua0o")
