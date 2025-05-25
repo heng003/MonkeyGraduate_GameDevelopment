@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://clo0qdq1loed0"]
+[gd_scene load_steps=5 format=3 uid="uid://clo0qdq1loed0"]
 
 [ext_resource type="PackedScene" uid="uid://1qvjym76jf78" path="res://characters/main_monyet.tscn" id="1_s5y8g"]
 [ext_resource type="Script" uid="uid://bu2idjfb7bynb" path="res://characters/main_monyet.gd" id="2_o2b6c"]
+[ext_resource type="PackedScene" uid="uid://4xlc8wgd2e78" path="res://characters/lecturer_1.tscn" id="3_o2b6c"]
+[ext_resource type="Script" uid="uid://w1t6jbaqqqif" path="res://characters/lecturer_1.gd" id="4_7vtgp"]
 
 [node name="Node" type="Node2D"]
 
 [node name="Monyet_original" parent="." instance=ExtResource("1_s5y8g")]
 position = Vector2(0, -4)
 script = ExtResource("2_o2b6c")
+
+[node name="Lecturer_1" parent="." instance=ExtResource("3_o2b6c")]
+position = Vector2(102, -16)
+script = ExtResource("4_7vtgp")
