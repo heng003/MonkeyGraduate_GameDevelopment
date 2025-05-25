@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://do82j83ev2tjs"]
+
+[ext_resource type="Script" uid="uid://bt7ufkn80km3f" path="res://ui/DialogueManager.gd" id="1_sbebl"]
+
+[node name="DialogueManager" type="CanvasLayer"]
+script = ExtResource("1_sbebl")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.825
+anchor_right = 0.5
+anchor_bottom = 0.825
+offset_left = -574.0
+offset_top = -50.6
+offset_right = 575.0
+offset_bottom = 115.4
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.251
+anchor_right = 0.059
+anchor_bottom = 0.28
+offset_left = -18.344
+offset_top = -17.057
+offset_right = 19.2059
+offset_bottom = 12.578
+theme_override_colors/font_color = Color(0.633757, 0.633757, 0.633757, 1)
+theme_override_font_sizes/font_size = 23
+text = "Name"
+
+[node name="Dialogue" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.061
+anchor_top = 0.426
+anchor_right = 0.061
+anchor_bottom = 0.426
+offset_left = -22.089
+offset_top = -2.782
+offset_right = 17.911
+offset_bottom = 25.218
+theme_override_font_sizes/font_size = 18
+text = "Dialogue Content"
+
+[node name="Buttons" type="HBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -572.5
+offset_top = -108.0
+offset_right = 574.5
+offset_bottom = -65.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="Button0" type="Button" parent="Panel/Buttons"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Option"
+icon_alignment = 1
+
+[node name="Button1" type="Button" parent="Panel/Buttons"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Option"
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Panel/Buttons"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Option"
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Panel/Buttons"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Option"
+icon_alignment = 1

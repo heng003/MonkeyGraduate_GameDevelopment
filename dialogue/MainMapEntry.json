@@ -1,0 +1,36 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+	  "text": "Another year, still just… a monyet.",
+	  "next_id": 1
+	},
+	{
+	  "id": 1,
+	  "name": "Monyet",
+	  "text": "I've watched so many students walk these grounds... real UM students.",
+	  "next_id": 2
+	},
+	{
+	  "id": 2,
+	  "name": "Monyet",
+	  "text": "But this time, I’m ready.",
+	  "next_id": 3
+	},
+	{
+	  "id": 3,
+	  "name": "Monyet",
+	  "text": "To become one of them, I must face every challenge... and pass.",
+	  "next_id": 4
+	},
+	{
+	  "id": 4,
+	  "name": "Monyet",
+	  "text": "Let’s do this. My journey to graduate begins—now!",
+	  "next_id": -1
+	}
+  ]
+}

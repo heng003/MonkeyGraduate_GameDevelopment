@@ -1,0 +1,18 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Lecturer 2",
+	  "text": "Hey! No wandering in the halls during lecture time!",
+	  "next_id": 1
+	},
+	{
+	  "id": 1,
+	  "name": "Lecturer 2",
+	  "text": "Back to the start with you!",
+	  "next_id": -1
+	}
+  ]
+}

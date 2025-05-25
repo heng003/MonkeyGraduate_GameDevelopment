@@ -1,20 +1,34 @@
 extends Node2D
 
-@onready var dialogue_box = $CanvasLayer/DialogueBox
+@onready var dialogue_manager = $DialogueManager
 @onready var player = $Monyet 
 
-var intro_dialogue = [
-	{"name": "Monyet", "text": "Another year, still just… a monyet."},
-	{"name": "Monyet", "text": "I've watched so many students walk these grounds... real UM students."},
-	{"name": "Monyet", "text": "But this time, I’m ready."},
-	{"name": "Monyet", "text": "To become one of them, I must face every challenge... and pass."},
-	{"name": "Monyet", "text": "Let’s do this. My journey to graduate begins—now!"}
-]
+var entry_dialogue_path = "MainMapEntry.json"
+var game1_entry_dialogue_path = "MainMapGame1Enrty.json"
+var game1_exit_dialogue_path = "MainMapGame1Exit.json"
+var game2_entry_dialogue_path = "MainMapGame2Enrty.json"
+var game2_exit_dialogue_path = "MainMapGame2Exit.json"
 
 func _ready():
+	_play_dialogue(entry_dialogue_path)
+
+func trigger_game1_entry_dialogue():
+	_play_dialogue(game1_entry_dialogue_path)
+
+func trigger_game1_exit_dialogue():
+	_play_dialogue(game1_exit_dialogue_path)
+
+func trigger_game2_entry_dialogue():
+	_play_dialogue(game2_entry_dialogue_path)
+
+func trigger_game2_exit_dialogue():
+	_play_dialogue(game2_exit_dialogue_path)
+
+func _play_dialogue(dialogue_path: String) -> void:
 	player.can_move = false
-	dialogue_box.start_dialogue(intro_dialogue)
-	dialogue_box.dialogue_finished.connect(_on_dialogue_finished)
+	dialogue_manager.visible = true
+	dialogue_manager.start_dialogue(dialogue_path)
+	dialogue_manager.dialogue_finished.connect(_on_dialogue_finished)
 
 func _on_dialogue_finished():
 	player.can_move = true

@@ -1,0 +1,12 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+	  "text": "Knowledge is power. Let’s see what UM has hidden in its shelves.",
+	  "next_id": -1
+	}
+  ]
+}
