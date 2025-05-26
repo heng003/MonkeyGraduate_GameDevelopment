@@ -1,10 +1,18 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 const SPEED = 300
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 var last_direction: String = "front"  # default direction
 var can_move: bool = true  
+=======
+const SPEED = 250
+
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+var last_direction: String = "front"  # default direction
+var can_move: bool = true  # ← Add this line
+>>>>>>> yanjun
 
 func _physics_process(_delta):
 	sprite_2d.play()
