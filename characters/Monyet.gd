@@ -1,12 +1,19 @@
 extends CharacterBody2D
 
-const SPEED = 200
+const SPEED = 250
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 var last_direction: String = "front"  # default direction
+var can_move: bool = true  # ← Add this line
 
 func _physics_process(_delta):
 	sprite_2d.play()
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		play_idle_animation()
+		return
+
 	var input_vector = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_up"):
@@ -19,7 +26,7 @@ func _physics_process(_delta):
 		input_vector.x = 1
 
 	if input_vector.x != 0:
-		input_vector.y = 0  # cancel vertical if moving horizontally
+		input_vector.y = 0  # Enforce 4-direction movement only
 
 	velocity = input_vector.normalized() * SPEED
 	move_and_slide()

@@ -1,14 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://hlsm87vuj55i"]
+[gd_scene load_steps=6 format=3 uid="uid://hlsm87vuj55i"]
 
 [ext_resource type="Script" uid="uid://11vi8y4hu4y4" path="res://scripts/MainMap.gd" id="1_5hgy3"]
-[ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_a1mhp"]
+[ext_resource type="PackedScene" uid="uid://1qvjym76jf78" path="res://characters/Monyet.tscn" id="2_a1mhp"]
 [ext_resource type="PackedScene" uid="uid://k7rgpvrx1jnw" path="res://ui/DialogueBox.tscn" id="3_2t08r"]
+[ext_resource type="PackedScene" uid="uid://4xlc8wgd2e78" path="res://characters/Lecturer_1.tscn" id="3_6ic70"]
+[ext_resource type="PackedScene" uid="uid://bnrwi5ce27gwp" path="res://characters/Lecturer_2.tscn" id="4_82ayj"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5hgy3")
 
 [node name="Monyet" parent="." instance=ExtResource("2_a1mhp")]
 position = Vector2(48, 52)
+
+[node name="Lecturer_1" parent="." instance=ExtResource("3_6ic70")]
+position = Vector2(170, 32)
+
+[node name="Lecturer_2" parent="." instance=ExtResource("4_82ayj")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
