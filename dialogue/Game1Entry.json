@@ -1,0 +1,18 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+	  "text": "Alright… grab the keys, dodge the lecturers, find the exit.",
+	  "next_id": 1
+	},
+	{
+	  "id": 1,
+	  "name": "Monyet",
+	  "text": "Simple enough… right?",
+	  "next_id": -1
+	}
+  ]
+}

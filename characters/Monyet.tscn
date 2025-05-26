@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://clo0qdq1loed0"]
+[gd_scene load_steps=29 format=3 uid="uid://dj6loigslowyu"]
 
 [ext_resource type="Script" uid="uid://bu2idjfb7bynb" path="res://characters/Monyet.gd" id="1_ec2lf"]
 [ext_resource type="Texture2D" uid="uid://chscsaipgoroc" path="res://assets/characters/Monkey/monkey_back_idle.png" id="1_nhm3i"]

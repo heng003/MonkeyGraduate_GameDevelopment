@@ -1,4 +1,3 @@
-# BookPopup.gd
 extends CanvasLayer
 
 @onready var content_left_label = $Panel/ContentLeft
@@ -9,7 +8,7 @@ signal popup_closed
 
 func _ready():
 	visible = false
-	close_button.pressed.connect(hide_popup)
+	#close_button.pressed.connect(hide_popup)
 
 func show_popup(content_left: String, content_right: String):
 	content_left_label.text = content_left

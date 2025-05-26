@@ -1,0 +1,102 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Librarian",
+	  "text": "Ready for a quiz? Let’s see what you’ve learned.",
+	  "next_id": 1
+	},
+	{
+	  "id": 1,
+	  "name": "Librarian",
+	  "text": "Question 1: In which year was Universiti Malaya established?",
+	  "choices": [
+		{ "text": "1949", "next_id": 2, "is_correct": true },
+		{ "text": "1957", "next_id": 94, "is_correct": false },
+		{ "text": "1969", "next_id": 94, "is_correct": false }
+	  ]
+	},
+	{
+	  "id": 2,
+	  "name": "Librarian",
+	  "text": "Correct! 1949 it is. Looks like someone paid attention in history class.",
+	  "next_id": 3
+	},
+	{
+	  "id": 3,
+	  "name": "Librarian",
+	  "text": "Question 2: What is the name of UM’s iconic central library?",
+	  "choices": [
+		{ "text": "Za'ba Memorial Library", "next_id": 96, "is_correct": false },
+		{ "text": "Central Library", "next_id": 4, "is_correct": true },
+		{ "text": "Tun Mahathir Library", "next_id": 96, "is_correct": false }
+	  ]
+	},
+	{
+	  "id": 4,
+	  "name": "Librarian",
+	  "text": "Correct again! You must be a regular visitor. Or at least good at guessing.",
+	  "next_id": 5
+	},
+	{
+	  "id": 5,
+	  "name": "Librarian",
+	  "text": "Question 3: What is UM’s official motto?",
+	  "choices": [
+		{ "text": "Ilmu, Punca Kemajuan", "next_id": 6, "is_correct": true },
+		{ "text": "Minda untuk Masa Depan", "next_id": 98, "is_correct": false },
+		{ "text": "Belajar dan Berjaya", "next_id": 98, "is_correct": false }
+	  ]
+	},
+	{
+	  "id": 6,
+	  "name": "Librarian",
+	  "text": "Three correct answers in a row?",
+	  "next_id": 7
+	},
+	{
+	  "id": 7,
+	  "name": "Librarian",
+	  "text": "Impressive. You’re officially UM material.",
+	  "next_id": -1
+	},
+	{
+	  "id": 94,
+	  "name": "Librarian",
+	  "text": "Get prepare yourself first… We have lots of books here.",
+	  "next_id": 95
+	},
+	{
+	  "id": 95,
+	  "name": "Librarian",
+	  "text": "And no, you can't borrow my glasses.",
+	  "next_id": -1
+	},
+	{
+	  "id": 96,
+	  "name": "Librarian",
+	  "text": "One more wrong answer and I’m calling campus security.",
+	  "next_id": 97
+	},
+	{
+	  "id": 97,
+	  "name": "Librarian",
+	  "text": "Just kidding. Maybe. Either way, you'll find the answers… eventually.",
+	  "next_id": -1
+	},
+	{
+	  "id": 98,
+	  "name": "Librarian",
+	  "text": "At this point, even the monkeys from Rimba Ilmu know more than you.",
+	  "next_id": 99
+	},
+	{
+	  "id": 99,
+	  "name": "Librarian",
+	  "text": "Brush up before they replace you.",
+	  "next_id": -1
+	}
+  ]
+}

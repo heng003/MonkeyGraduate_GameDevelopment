@@ -1,0 +1,18 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Lecturer 1",
+	  "text": "Ah, an unprepared mind is easily caught.",
+	  "next_id": 1
+	},
+	{
+	  "id": 1,
+	  "name": "Lecturer 1",
+	  "text": "Go back. Learn from your mistakes.",
+	  "next_id": -1
+	}
+  ]
+}

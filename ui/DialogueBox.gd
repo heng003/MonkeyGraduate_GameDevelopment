@@ -1,7 +1,7 @@
-extends Control  # or Panel
+extends CanvasLayer
 
-@onready var name_label = $NameLabel
-@onready var dialogue_label = $DialogueLabel
+@onready var name_label = $Panel/NameLabel
+@onready var dialogue_label = $Panel/DialogueLabel
 
 var dialogue_lines = []
 var current_line = 0
