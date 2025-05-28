@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dxf86g41jw5eu" path="res://assets/map/atlas_32x.png" id="2_t4bav"]
 [ext_resource type="Texture2D" uid="uid://ck11smlc0c1qj" path="res://assets/map/atlas_48x.png" id="2_y3wct"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_yxo61"]
-[ext_resource type="PackedScene" uid="uid://bsu1gyhl0k2yo" path="res://characters/Lecturer_1.tscn" id="3_mcjy6"]
+[ext_resource type="PackedScene" uid="uid://pklks1cgu12a" path="res://characters/Lecturer_1.tscn" id="3_mcjy6"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="3_mua0o"]
 [ext_resource type="PackedScene" uid="uid://bnbexqnfeyiih" path="res://characters/Lecturer_2.tscn" id="4_16hu5"]
 [ext_resource type="PackedScene" uid="uid://cws0k4l4k5pp0" path="res://ui/Key.tscn" id="6_16hu5"]
@@ -14593,4 +14593,4 @@ position = Vector2(812, 212)
 visible = false
 
 [node name="Key" parent="." instance=ExtResource("6_16hu5")]
-position = Vector2(152, 812)
+position = Vector2(1943, 713)

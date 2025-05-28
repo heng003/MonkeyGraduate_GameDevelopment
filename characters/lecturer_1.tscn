@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bsu1gyhl0k2yo"]
+[gd_scene load_steps=28 format=3 uid="uid://pklks1cgu12a"]
 
 [ext_resource type="Script" uid="uid://suwujvpmd111" path="res://characters/Lecturer_1.gd" id="1_060o7"]
 [ext_resource type="Texture2D" uid="uid://b3ns0weigfkxa" path="res://assets/characters/Lecturer_1/lecture1_back_idle.png" id="1_srvqk"]
@@ -179,7 +179,7 @@ position = Vector2(224.5, 86.5)
 scale = Vector2(3.46875, 3.46875)
 sprite_frames = SubResource("SpriteFrames_ohac8")
 animation = &"front_walk"
-frame_progress = 0.816526
+frame_progress = 0.286863
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(225.5, 85.5)
