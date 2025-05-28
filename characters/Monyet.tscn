@@ -185,7 +185,7 @@ texture_filter = 1
 position = Vector2(62.5, 46.5)
 scale = Vector2(4.09375, 4.09375)
 sprite_frames = SubResource("SpriteFrames_rb8oa")
-animation = &"back_walk"
+animation = &"front_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(56.0625, 46)
