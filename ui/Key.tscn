@@ -47,7 +47,7 @@ height = 48.0833
 script = ExtResource("1_5cq1t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(277, 358)
+position = Vector2(-0.5, -1.5)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_b60tk")
 animation = &"key_idle"
@@ -55,6 +55,6 @@ frame = 2
 frame_progress = 0.213885
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(278, 358)
+position = Vector2(0.5, -1.5)
 rotation = 0.785397
 shape = SubResource("CapsuleShape2D_xq7pi")

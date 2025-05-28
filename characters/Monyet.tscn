@@ -175,20 +175,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5y8g"]
-size = Vector2(91.875, 93.5)
+size = Vector2(71, 73)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ec2lf")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(62.5, 46.5)
-scale = Vector2(4.09375, 4.09375)
+position = Vector2(64, 57)
+scale = Vector2(3.25, 3.25)
 sprite_frames = SubResource("SpriteFrames_rb8oa")
 animation = &"front_idle"
+frame_progress = 0.738025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(56.0625, 46)
+position = Vector2(61.5, 58.5)
 shape = SubResource("RectangleShape2D_s5y8g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
