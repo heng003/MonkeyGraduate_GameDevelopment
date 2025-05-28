@@ -168,20 +168,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf20b"]
-size = Vector2(88, 90)
+size = Vector2(74, 81)
 
 [node name="Lecturer_2" type="CharacterBody2D"]
 script = ExtResource("1_yvrid")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(361, 103)
-scale = Vector2(3.95312, 3.95312)
+position = Vector2(355.375, 97.375)
+scale = Vector2(3.60156, 3.60156)
 sprite_frames = SubResource("SpriteFrames_2ke58")
 animation = &"front_idle"
-frame = 2
-frame_progress = 0.227753
+frame_progress = 0.187079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(361, 99)
+position = Vector2(356, 94.5)
 shape = SubResource("RectangleShape2D_jf20b")
