@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://drah122h5frpg" path="res://assets/map/Interiors_free_48x48.png" id="2_xplks"]
 [ext_resource type="Texture2D" uid="uid://cdwcy07icxv0a" path="res://assets/map/Room_Builder_free_48x48.png" id="3_4mt8w"]
 [ext_resource type="PackedScene" uid="uid://byfscbtetjtc7" path="res://ui/BookPopup.tscn" id="3_2625v"]
-[ext_resource type="PackedScene" uid="uid://doi3wfhcmh5ou" path="res://characters/Librarian.tscn" id="3_tof3h"]
+[ext_resource type="PackedScene" path="res://characters/Librarian.tscn" id="3_tof3h"]
 [ext_resource type="Texture2D" uid="uid://ck11smlc0c1qj" path="res://assets/map/atlas_48x.png" id="4_tlps1"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="6_tof3h"]
 [ext_resource type="PackedScene" uid="uid://d4hy6cibq6ila" path="res://ui/Student_Card.tscn" id="7_4mt8w"]
