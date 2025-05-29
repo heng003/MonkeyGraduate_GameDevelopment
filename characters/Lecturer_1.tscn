@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://pklks1cgu12a"]
+[gd_scene load_steps=28 format=3 uid="uid://lklqmust30qa"]
 
 [ext_resource type="Script" uid="uid://suwujvpmd111" path="res://characters/Lecturer_1.gd" id="1_060o7"]
 [ext_resource type="Texture2D" uid="uid://b3ns0weigfkxa" path="res://assets/characters/Lecturer_1/lecture1_back_idle.png" id="1_srvqk"]
