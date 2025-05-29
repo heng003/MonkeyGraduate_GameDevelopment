@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqae88mhj0k3o"]
+[gd_scene load_steps=4 format=3 uid="uid://d4hy6cibq6ila"]
 
 [ext_resource type="Script" uid="uid://cootmvc1ps2xa" path="res://ui/Student_Card.gd" id="1_cicrp"]
 [ext_resource type="Texture2D" uid="uid://y1bl28lo1mab" path="res://assets/components/Student Card.png" id="2_qsrjv"]
