@@ -153,20 +153,25 @@ func typing_effect(text: String) -> void:
 
 	is_typing = false
 
-func _on_choice_selected(button: Button, choice: Dictionary) -> void:
-	var is_correct = choice.get("is_correct", false)
-
-	# Change button color based on correctness
-	button.modulate = Color(0, 1, 0) if is_correct else Color(1, 0, 0)
-
+func _on_choice_selected(clicked_button: Button, choice: Dictionary) -> void:
+	for button in ui_buttons:
+		if button != clicked_button:
+			button.disabled = true
+		else:
+			button.disabled = true
+			var is_correct = choice.get("is_correct", false)
+			button.modulate = Color(0, 1, 0) if is_correct else Color(1, 0, 0)
+	
 	# Wait 1 second
 	await get_tree().create_timer(1.0).timeout
-
-	# Optionally reset color
-	button.modulate = Color(1, 1, 1)  # white (original)
-
+	
 	# Hide button container
 	ui_button_container.hide()
-
+	
+	# Reset button
+	clicked_button.modulate = Color(1, 1, 1)  # white (original)
+	for button in ui_buttons:
+		button.disabled = false
+	
 	# Go to the next node
 	load_node(choice.get("next_id", -1))
