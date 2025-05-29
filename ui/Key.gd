@@ -4,8 +4,8 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var is_collected = false
-var follow_offset = Vector2(0, 32)
-var follow_delay = 0.15  # seconds of delay
+var follow_offset = Vector2(120,50)
+var follow_delay = 0.10  # seconds of delay
 var follow_positions: Array[Vector2] = []
 
 func _ready():
