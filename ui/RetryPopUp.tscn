@@ -63,6 +63,7 @@ theme_override_constants/separation = 100
 alignment = 1
 
 [node name="RetryButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("3_f8ngo")
@@ -70,6 +71,7 @@ theme_override_font_sizes/font_size = 25
 text = "Retry"
 
 [node name="BackButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("3_f8ngo")

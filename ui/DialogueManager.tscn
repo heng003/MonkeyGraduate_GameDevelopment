@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://do82j83ev2tjs"]
+[gd_scene load_steps=3 format=3 uid="uid://do82j83ev2tjs"]
 
 [ext_resource type="Script" uid="uid://bt7ufkn80km3f" path="res://ui/DialogueManager.gd" id="1_sbebl"]
+[ext_resource type="Theme" uid="uid://c44qpteexvof1" path="res://ui/Default.tres" id="2_nx7k2"]
 
 [node name="DialogueManager" type="CanvasLayer"]
 script = ExtResource("1_sbebl")
@@ -11,9 +12,9 @@ anchor_left = 0.5
 anchor_top = 0.825
 anchor_right = 0.5
 anchor_bottom = 0.825
-offset_left = -574.0
+offset_left = -579.0
 offset_top = -50.6
-offset_right = 575.0
+offset_right = 578.0
 offset_bottom = 115.4
 grow_horizontal = 2
 grow_vertical = 2
@@ -29,6 +30,7 @@ offset_left = -18.344
 offset_top = -17.057
 offset_right = 19.2059
 offset_bottom = 12.578
+theme = ExtResource("2_nx7k2")
 theme_override_colors/font_color = Color(0.633757, 0.633757, 0.633757, 1)
 theme_override_font_sizes/font_size = 23
 text = "Name"
@@ -41,9 +43,10 @@ anchor_top = 0.426
 anchor_right = 0.061
 anchor_bottom = 0.426
 offset_left = -22.089
-offset_top = -2.782
-offset_right = 17.911
-offset_bottom = 25.218
+offset_top = -1.782
+offset_right = 128.911
+offset_bottom = 26.218
+theme = ExtResource("2_nx7k2")
 theme_override_font_sizes/font_size = 18
 text = "Dialogue Content"
 
@@ -64,28 +67,36 @@ alignment = 1
 
 [node name="Button0" type="Button" parent="Panel/Buttons"]
 visible = false
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("2_nx7k2")
 theme_override_font_sizes/font_size = 22
 text = "Option"
 icon_alignment = 1
 
 [node name="Button1" type="Button" parent="Panel/Buttons"]
 visible = false
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("2_nx7k2")
 theme_override_font_sizes/font_size = 22
 text = "Option"
 icon_alignment = 1
 
 [node name="Button2" type="Button" parent="Panel/Buttons"]
 visible = false
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("2_nx7k2")
 theme_override_font_sizes/font_size = 22
 text = "Option"
 icon_alignment = 1
 
 [node name="Button3" type="Button" parent="Panel/Buttons"]
 visible = false
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("2_nx7k2")
 theme_override_font_sizes/font_size = 22
 text = "Option"
 icon_alignment = 1
