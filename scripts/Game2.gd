@@ -22,7 +22,6 @@ func _play_dialogue(dialogue_path: String) -> void:
 
 func _on_dialogue_finished():
 	player.can_move = true
-	show_um_history()
 
 func _show_um_info(left_title: String, left_desc: String, right_title: String, right_detail: String):
 	player.can_move = false
