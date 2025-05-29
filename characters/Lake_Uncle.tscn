@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dviopyn2sbqbx"]
+[gd_scene load_steps=9 format=3 uid="uid://c0crh3js5ax46"]
 
 [ext_resource type="Script" uid="uid://ba63ot6krqx8a" path="res://characters/Lake_Uncle.gd" id="1_05apu"]
 [ext_resource type="Texture2D" uid="uid://bh0owypw2ttfv" path="res://assets/characters/Lake_Uncle/Lake_Uncle_idle.png" id="1_hwyi6"]
@@ -45,13 +45,13 @@ size = Vector2(54, 75)
 [node name="Lake_Uncle" type="CharacterBody2D"]
 script = ExtResource("1_05apu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(27.5, 29.5)
 scale = Vector2(3.34375, 3.34375)
 sprite_frames = SubResource("SpriteFrames_78w4e")
 animation = &"lake_uncle_idle"
-frame_progress = 0.503106
+frame_progress = 0.710382
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(27, 27.5)

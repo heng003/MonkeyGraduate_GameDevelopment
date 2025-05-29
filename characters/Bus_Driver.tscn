@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://oxmtkx527osu"]
+[gd_scene load_steps=9 format=3 uid="uid://2e7pg5dayw55"]
 
 [ext_resource type="Texture2D" uid="uid://betov4c6p2n0" path="res://assets/characters/Bus_Driver/Bus_Driver_idle.png" id="1_2p8kv"]
 [ext_resource type="Script" uid="uid://4d23hd0qyfi6" path="res://characters/Bus_Driver.gd" id="1_u3wl4"]
