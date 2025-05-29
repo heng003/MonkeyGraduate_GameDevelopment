@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dxf86g41jw5eu" path="res://assets/map/atlas_32x.png" id="2_t4bav"]
 [ext_resource type="Texture2D" uid="uid://ck11smlc0c1qj" path="res://assets/map/atlas_48x.png" id="2_y3wct"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_yxo61"]
-[ext_resource type="PackedScene" uid="uid://lklqmust30qa" path="res://characters/Lecturer_1.tscn" id="3_mcjy6"]
+[ext_resource type="PackedScene" uid="uid://pklks1cgu12a" path="res://characters/Lecturer_1.tscn" id="3_mcjy6"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="3_mua0o"]
 [ext_resource type="PackedScene" uid="uid://bnbexqnfeyiih" path="res://characters/Lecturer_2.tscn" id="4_16hu5"]
 [ext_resource type="Texture2D" uid="uid://cdwcy07icxv0a" path="res://assets/map/Room_Builder_free_48x48.png" id="4_n171a"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqae88mhj0k3o"]
+
+[ext_resource type="Script" uid="uid://cootmvc1ps2xa" path="res://ui/Student_Card.gd" id="1_cicrp"]
+[ext_resource type="Texture2D" uid="uid://y1bl28lo1mab" path="res://assets/components/Student Card.png" id="2_qsrjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60qn5"]
+size = Vector2(24.5657, 31.9444)
+
+[node name="Student_Card" type="Area2D"]
+script = ExtResource("1_cicrp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 15)
+scale = Vector2(1.9375, 1.9375)
+texture = ExtResource("2_qsrjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.2828, 13.5309)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_60qn5")
