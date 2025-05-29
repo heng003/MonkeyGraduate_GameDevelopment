@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://bvewrac7g20ac"]
 
-[ext_resource type="Script" path="res://scripts/Game1.gd" id="1_mua0o"]
+[ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
 [ext_resource type="Texture2D" uid="uid://c5i4ees6rmrj3" path="res://assets/map/TopDownHouse_FloorsAndWalls.png" id="2_8xv86"]
 [ext_resource type="Texture2D" uid="uid://dxf86g41jw5eu" path="res://assets/map/atlas_32x.png" id="2_t4bav"]
 [ext_resource type="Texture2D" uid="uid://ck11smlc0c1qj" path="res://assets/map/atlas_48x.png" id="2_y3wct"]
