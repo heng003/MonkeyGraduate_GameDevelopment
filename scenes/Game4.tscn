@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbupi0givadq"]
+[gd_scene load_steps=4 format=3 uid="uid://dbupi0givadq"]
 
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="1_vpobs"]
 [ext_resource type="PackedScene" uid="uid://2e7pg5dayw55" path="res://characters/Bus_Driver.tscn" id="2_hsk85"]
+[ext_resource type="PackedScene" uid="uid://blkja33actvwj" path="res://ui/Bus.tscn" id="3_hsk85"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(0, -5)
 
 [node name="Bus_Driver" parent="." instance=ExtResource("2_hsk85")]
 position = Vector2(116, 19)
+
+[node name="Bus" parent="." instance=ExtResource("3_hsk85")]
+position = Vector2(205, 11)
