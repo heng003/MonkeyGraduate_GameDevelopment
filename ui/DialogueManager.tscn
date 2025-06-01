@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://do82j83ev2tjs"]
 
 [ext_resource type="Script" uid="uid://bt7ufkn80km3f" path="res://ui/DialogueManager.gd" id="1_sbebl"]
-[ext_resource type="Theme" uid="uid://c44qpteexvof1" path="res://ui/Default.tres" id="2_nx7k2"]
+[ext_resource type="Theme" uid="uid://dnh2711stdnqi" path="res://ui/Default.tres" id="2_nx7k2"]
 
 [node name="DialogueManager" type="CanvasLayer"]
 script = ExtResource("1_sbebl")
