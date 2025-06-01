@@ -1,0 +1,18 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": " Vice-Chancellor",
+		  "text": "From climbing trees to climbing GPA... Today, you’ve done it all.",
+	  "next_id": 1
+	},
+	{
+	  "id": 1,
+	  "name": "Vice-Chancellor",
+		  "text": "Congratulations, Mahasiswa UM! You’ve achieved... the impossible: CGPA 4.00!",
+	  "next_id": -1
+	}
+  ]
+}

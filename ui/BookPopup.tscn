@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhnu0ir0dwoss" path="res://ui/BookPopup.gd" id="1_r70ej"]
 [ext_resource type="Texture2D" uid="uid://c3g562digkrtp" path="res://assets/ui/book_middle.png" id="2_1v1wv"]
-[ext_resource type="Theme" uid="uid://c44qpteexvof1" path="res://ui/Default.tres" id="3_oc8uf"]
+[ext_resource type="Theme" uid="uid://dnh2711stdnqi" path="res://ui/Default.tres" id="3_oc8uf"]
 [ext_resource type="Texture2D" uid="uid://g8761jqctbsb" path="res://assets/ui/GUI2.png" id="4_5olnk"]
 [ext_resource type="Texture2D" uid="uid://dv5t152x866q4" path="res://assets/ui/GUI.png" id="5_pxgvh"]
 
@@ -70,8 +70,8 @@ theme = ExtResource("3_oc8uf")
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.957
-anchor_top = 0.0913762
+anchor_left = 0.951792
+anchor_top = 0.088
 anchor_right = 0.951792
 anchor_bottom = 0.088
 offset_left = -11.976

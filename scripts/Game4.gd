@@ -3,18 +3,14 @@ extends Node2D
 @onready var dialogue_manager = $DialogueManager
 @onready var player = $Monyet
 
-var entry_dialogue_path = "Game1Entry.json"
-var lecturer1_dialogue_path = "Game1Lecturer1.json"
-var lecturer2_dialogue_path = "Game1Lecturer2.json"
+var entry_dialogue_path = "Game4Entry.json"
+var retry_dialogue_path = "Game4Retry.json"
 
 func _ready():
 	_play_dialogue(entry_dialogue_path)
 
-func trigger_lecturer1_dialogue():
-	_play_dialogue(lecturer1_dialogue_path)
-
-func trigger_lecturer2_dialogue():
-	_play_dialogue(lecturer2_dialogue_path)
+func trigger_retry_dialogue():
+	_play_dialogue(retry_dialogue_path)
 
 func _play_dialogue(dialogue_path: String) -> void:
 	player.can_move = false
@@ -34,6 +30,7 @@ func show_retry_popup():
 
 func _on_retry_pressed():
 	print("Retry pressed!")
+	trigger_retry_dialogue()
 	# Restart level or reset logic here
 
 func _on_back_pressed():

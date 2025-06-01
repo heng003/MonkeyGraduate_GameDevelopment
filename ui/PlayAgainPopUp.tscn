@@ -1,18 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqmh3garn8q1i"]
+[gd_scene load_steps=6 format=3 uid="uid://cx3ew7phxijxn"]
 
-[ext_resource type="Script" uid="uid://84e0rkrvuk2y" path="res://ui/RetryPopUp.gd" id="1_t6xsl"]
-[ext_resource type="Texture2D" uid="uid://dv5t152x866q4" path="res://assets/ui/GUI.png" id="2_gp52o"]
-[ext_resource type="Theme" uid="uid://dnh2711stdnqi" path="res://ui/Default.tres" id="3_f8ngo"]
+[ext_resource type="Script" uid="uid://c1iy4p7otysvb" path="res://ui/PlayAgainPopUp.gd" id="1_ii2kq"]
+[ext_resource type="Texture2D" uid="uid://dv5t152x866q4" path="res://assets/ui/GUI.png" id="2_of8sf"]
+[ext_resource type="Theme" uid="uid://dnh2711stdnqi" path="res://ui/Default.tres" id="3_vt0ai"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lefjq"]
-texture = ExtResource("2_gp52o")
+texture = ExtResource("2_of8sf")
 region_rect = Rect2(0, 96, 48, 32)
 
 [sub_resource type="Theme" id="Theme_eo5on"]
 
-[node name="RetryPopUp" type="CanvasLayer"]
+[node name="PlayAgainPopUp" type="CanvasLayer"]
 visible = false
-script = ExtResource("1_t6xsl")
+script = ExtResource("1_ii2kq")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
@@ -51,9 +51,9 @@ theme_override_constants/margin_bottom = 50
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("3_f8ngo")
+theme = ExtResource("3_vt0ai")
 theme_override_font_sizes/font_size = 30
-text = "Try Again?"
+text = "Graduation Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -63,18 +63,18 @@ size_flags_vertical = 8
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="RetryButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="ReplayButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("3_f8ngo")
+theme = ExtResource("3_vt0ai")
 theme_override_font_sizes/font_size = 25
-text = "Retry"
+text = "Replay"
 
-[node name="BackButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
-theme = ExtResource("3_f8ngo")
+theme = ExtResource("3_vt0ai")
 theme_override_font_sizes/font_size = 25
-text = "Back"
+text = "Quit"
