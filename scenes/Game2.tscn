@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://47lxnqfeda5g" path="res://assets/map/libassetpack-tiled.png" id="5_4mt8w"]
 [ext_resource type="Texture2D" uid="uid://dxf86g41jw5eu" path="res://assets/map/atlas_32x.png" id="5_tlps1"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="6_tof3h"]
-[ext_resource type="PackedScene" path="res://ui/Student_Card.tscn" id="7_4mt8w"]
+[ext_resource type="PackedScene" uid="uid://d4hy6cibq6ila" path="res://ui/Student_Card.tscn" id="7_4mt8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6slyv"]
 texture = ExtResource("2_xplks")
