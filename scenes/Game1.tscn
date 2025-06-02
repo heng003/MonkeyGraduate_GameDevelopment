@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bvewrac7g20ac"]
+[gd_scene load_steps=31 format=3 uid="uid://bvewrac7g20ac"]
 
 [ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
 [ext_resource type="Texture2D" uid="uid://c5i4ees6rmrj3" path="res://assets/map/TopDownHouse_FloorsAndWalls.png" id="2_8xv86"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://ccbi3s8ovfv72" path="res://assets/map/TopDownHouse_DoorsAndWindows.png" id="5_uva1g"]
 [ext_resource type="PackedScene" uid="uid://cws0k4l4k5pp0" path="res://ui/Key.tscn" id="6_16hu5"]
 [ext_resource type="Texture2D" uid="uid://drah122h5frpg" path="res://assets/map/Interiors_free_48x48.png" id="7_kk1q1"]
+[ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="15_noa2v"]
+[ext_resource type="AudioStream" uid="uid://dfoa3rft180vg" path="res://assets/audio/sound_game_over.wav" id="16_heyx7"]
+[ext_resource type="AudioStream" uid="uid://c5bs7p6t4etwi" path="res://assets/audio/sound_waiting_response.wav" id="17_hxw3l"]
+[ext_resource type="AudioStream" uid="uid://fso4pngdognk" path="res://assets/audio/sound_player_selection.mp3" id="18_6rmwx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kk1q1"]
 texture = ExtResource("2_8xv86")
@@ -24421,7 +24425,19 @@ pattern_0 = SubResource("TileMapPattern_uva1g")
 pattern_1 = SubResource("TileMapPattern_81ei4")
 pattern_2 = SubResource("TileMapPattern_noa2v")
 
-[node name="Node2D2" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_1earx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 800, 136, 0, 0, 0, 0, 1374, 137)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_heyx7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1768, 371, 0, 0, 0, 0, 1765, 833)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_mua0o")
 
 [node name="Ground" type="TileMap" parent="."]
@@ -24438,14 +24454,47 @@ layer_0/tile_data = PackedInt32Array(3735549, 327681, 45, 3735550, 393217, 45, 3
 [node name="Monyet" parent="." instance=ExtResource("2_yxo61")]
 position = Vector2(10, -36)
 
-[node name="Lecturer_1" parent="." instance=ExtResource("3_mcjy6")]
-position = Vector2(681, 721)
-
-[node name="Lecturer_2" parent="." instance=ExtResource("4_16hu5")]
-position = Vector2(666, 54)
-
 [node name="DialogueManager" parent="." instance=ExtResource("3_mua0o")]
 visible = false
 
 [node name="Key" parent="." instance=ExtResource("6_16hu5")]
 position = Vector2(1943, 713)
+
+[node name="Game1BGM" parent="." instance=ExtResource("15_noa2v")]
+
+[node name="Key2" parent="." instance=ExtResource("6_16hu5")]
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("16_heyx7")
+
+[node name="WaitingResponseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_hxw3l")
+
+[node name="PlayerSelectionSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("18_6rmwx")
+
+[node name="Lecturer_1" parent="." instance=ExtResource("3_mcjy6")]
+position = Vector2(757, 139)
+path_string = "PathLecturer1"
+
+[node name="PathLecturer1" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1earx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PathLecturer1"]
+position = Vector2(800, 136)
+rotation = 0.00174216
+loop = false
+
+[node name="Lecturer_2" parent="." instance=ExtResource("4_16hu5")]
+position = Vector2(1769, 380)
+path_string = "PathLecturer2"
+
+[node name="PathLecturer2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_heyx7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PathLecturer2"]
+position = Vector2(1768, 371)
+rotation = 1.57729
+loop = false

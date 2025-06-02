@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dnh2711stdnqi" path="res://ui/Default.tres" id="2_nx7k2"]
 
 [node name="DialogueManager" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_sbebl")
 
 [node name="Panel" type="Panel" parent="."]
