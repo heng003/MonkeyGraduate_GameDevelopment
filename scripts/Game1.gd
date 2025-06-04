@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var dialogue_manager = $DialogueManager
 @onready var player = $Monyet
-@onready var sound_player_select = $PlayerSelectionSound
+@onready var sound_player_select = $PlayerSelectionSoundEffect
 
 var entry_dialogue_path = "Game1Entry.json"
 var lecturer1_dialogue_path = "Game1Lecturer1.json"

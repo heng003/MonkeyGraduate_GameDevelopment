@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://do82j83ev2tjs"]
+[gd_scene load_steps=5 format=3 uid="uid://do82j83ev2tjs"]
 
 [ext_resource type="Script" uid="uid://bt7ufkn80km3f" path="res://ui/DialogueManager.gd" id="1_sbebl"]
 [ext_resource type="Theme" uid="uid://dnh2711stdnqi" path="res://ui/Default.tres" id="2_nx7k2"]
+[ext_resource type="PackedScene" uid="uid://4wwkdqay26vh" path="res://characters/correct_answer_sound_effect.tscn" id="3_v4r1m"]
+[ext_resource type="PackedScene" uid="uid://dlkwcskpeivy" path="res://characters/wrong_answer_sound_effect.tscn" id="4_5axie"]
 
 [node name="DialogueManager" type="CanvasLayer"]
 process_mode = 3
@@ -101,3 +103,7 @@ theme = ExtResource("2_nx7k2")
 theme_override_font_sizes/font_size = 22
 text = "Option"
 icon_alignment = 1
+
+[node name="CorrectAnswerSoundEffect" parent="." instance=ExtResource("3_v4r1m")]
+
+[node name="WrongAnswerSoundEffect" parent="." instance=ExtResource("4_5axie")]
