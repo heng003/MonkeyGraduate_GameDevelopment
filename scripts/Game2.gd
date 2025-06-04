@@ -3,6 +3,8 @@ extends Node2D
 @onready var dialogue_manager = $DialogueManager
 @onready var player = $Monyet
 @onready var book_popup = $BookPopup
+@onready var game2_bgm = $Game2Bgm
+@onready var flipping_book_sound_effect = $FlippingBookSoundEffect
 
 var entry_dialogue_path = "Game2Entry.json"
 var quiz_dialogue_path = "Game2Quiz.json"
@@ -25,6 +27,8 @@ func _on_dialogue_finished():
 
 func _show_um_info(left_title: String, left_desc: String, right_title: String, right_detail: String):
 	player.can_move = false
+	game2_bgm.stop()
+	flipping_book_sound_effect.play()
 	var left_text = "%s\n\n%s" % [left_title, left_desc]
 	var right_text = "%s\n\n%s" % [right_title, right_detail]
 	book_popup.show_popup(left_text, right_text)
@@ -55,3 +59,4 @@ func show_um_motto():
 
 func _on_popup_closed():
 	player.can_move = true
+	game2_bgm.play()

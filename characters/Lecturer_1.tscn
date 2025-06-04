@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://pklks1cgu12a"]
 
-[ext_resource type="Script" path="res://characters/lecturer.gd" id="1_bmxt1"]
+[ext_resource type="Script" uid="uid://n428rxfreawp" path="res://characters/lecturer.gd" id="1_bmxt1"]
 [ext_resource type="Texture2D" uid="uid://b3ns0weigfkxa" path="res://assets/characters/Lecturer_1/lecture1_back_idle.png" id="1_srvqk"]
 [ext_resource type="Texture2D" uid="uid://dtwa2txpsuxcq" path="res://assets/characters/Lecturer_1/lecture1_back_walk.png" id="2_cvfxv"]
 [ext_resource type="Texture2D" uid="uid://bworgjip7qk6q" path="res://assets/characters/Lecturer_1/lecturer1_right_idle.png" id="3_5pncy"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bx45skq878n2v" path="res://assets/characters/Lecturer_1/lecturer1_front_idle.png" id="4_okymf"]
 [ext_resource type="Texture2D" uid="uid://bjffm1mxvkok8" path="res://assets/characters/Lecturer_1/lecturer1_front_walk.png" id="5_bmxt1"]
 [ext_resource type="Script" uid="uid://d2j1mj56umsl7" path="res://characters/area_2d_on_lecturer_collide.gd" id="7_060o7"]
-[ext_resource type="Script" path="res://characters/chase_area.gd" id="9_nfd70"]
+[ext_resource type="Script" uid="uid://d2odfexuyuv7t" path="res://characters/chase_area.gd" id="9_nfd70"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okymf"]
 atlas = ExtResource("1_srvqk")

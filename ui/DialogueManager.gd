@@ -16,6 +16,9 @@ var skip_typing := false
 @onready var ui_text = $Panel/Dialogue
 @onready var ui_name_text = $Panel/Name
 @onready var ui_button_container= $Panel/Buttons
+@onready var correct_answer_sound_effect = $CorrectAnswerSoundEffect
+@onready var wrong_answer_sound_effect = $WrongAnswerSoundEffect
+
 var ui_buttons = []
 
 signal dialogue_finished
@@ -154,12 +157,21 @@ func typing_effect(text: String) -> void:
 	is_typing = false
 
 func _on_choice_selected(clicked_button: Button, choice: Dictionary) -> void:
+	var root_node = get_tree().current_scene
+	var quiz_bgm = root_node.get_node("QuizBgm")
 	for button in ui_buttons:
 		if button != clicked_button:
 			button.disabled = true
 		else:
 			button.disabled = true
 			var is_correct = choice.get("is_correct", false)
+			if is_correct:
+				correct_answer_sound_effect.play()
+			else:
+				quiz_bgm.stop()
+				wrong_answer_sound_effect.play()
+				
+				
 			button.modulate = Color(0, 1, 0) if is_correct else Color(1, 0, 0)
 	
 	# Wait 1 second

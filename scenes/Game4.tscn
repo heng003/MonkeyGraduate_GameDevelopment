@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dcoyfjm7kb3f8" path="res://scripts/Game4.gd" id="1_6tlln"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="1_vpobs"]
 [ext_resource type="PackedScene" uid="uid://2e7pg5dayw55" path="res://characters/Bus_Driver.tscn" id="2_hsk85"]
-[ext_resource type="PackedScene" uid="uid://blkja33actvwj" path="res://ui/Bus.tscn" id="3_hsk85"]
+[ext_resource type="PackedScene" path="res://ui/Bus.tscn" id="3_hsk85"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="5_pvtga"]
 
 [node name="Node2D" type="Node2D"]
