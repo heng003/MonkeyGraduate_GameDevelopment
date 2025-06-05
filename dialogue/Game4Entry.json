@@ -1,0 +1,12 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+	  "text": "Wait! That’s my bus! Don’t leave me behind!",
+	  "next_id": -1
+	}
+  ]
+}

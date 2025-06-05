@@ -1,12 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://bnbexqnfeyiih"]
+[gd_scene load_steps=32 format=3 uid="uid://bnbexqnfeyiih"]
 
+[ext_resource type="Script" uid="uid://n428rxfreawp" path="res://characters/lecturer.gd" id="1_f61un"]
 [ext_resource type="Texture2D" uid="uid://cl633p0uu6ti5" path="res://assets/characters/Lecturer_2/lecturer2_back_idle.png" id="1_l0ic8"]
-[ext_resource type="Script" uid="uid://bso3gdhysnu7g" path="res://characters/Lecturer_2.gd" id="1_yvrid"]
 [ext_resource type="Texture2D" uid="uid://bjdgcurvprevp" path="res://assets/characters/Lecturer_2/lecturer2_back_walk.png" id="2_yvrid"]
 [ext_resource type="Texture2D" uid="uid://b6n1rl4udplph" path="res://assets/characters/Lecturer_2/lecturer2_right_idle.png" id="3_35xic"]
 [ext_resource type="Texture2D" uid="uid://6evwi7yiheg7" path="res://assets/characters/Lecturer_2/lecturer2_front_idle.png" id="4_gcbpi"]
 [ext_resource type="Texture2D" uid="uid://dtbypprply0gd" path="res://assets/characters/Lecturer_2/lecturer2_right_walk.png" id="4_kjgkg"]
 [ext_resource type="Texture2D" uid="uid://twam7sqj4vbk" path="res://assets/characters/Lecturer_2/lecturer2_front_walk.png" id="5_f61un"]
+[ext_resource type="Script" uid="uid://d2j1mj56umsl7" path="res://characters/area_2d_on_lecturer_collide.gd" id="8_gcbpi"]
+[ext_resource type="Script" uid="uid://d2odfexuyuv7t" path="res://characters/chase_area.gd" id="9_sfigc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcbpi"]
 atlas = ExtResource("1_l0ic8")
@@ -168,19 +170,39 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf20b"]
-size = Vector2(74, 81)
+size = Vector2(79, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f61un"]
+size = Vector2(84, 85)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f61un"]
+radius = 250.0
 
 [node name="Lecturer_2" type="CharacterBody2D"]
-script = ExtResource("1_yvrid")
+script = ExtResource("1_f61un")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(355.375, 97.375)
 scale = Vector2(3.60156, 3.60156)
 sprite_frames = SubResource("SpriteFrames_2ke58")
 animation = &"front_idle"
-frame_progress = 0.187079
+frame = 2
+frame_progress = 0.195809
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(356, 94.5)
+position = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_jf20b")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_gcbpi")
+dialogue_path = "Game1Lecturer2.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 1.5)
+shape = SubResource("RectangleShape2D_f61un")
+
+[node name="ChaseArea" type="Area2D" parent="."]
+script = ExtResource("9_sfigc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea"]
+shape = SubResource("CircleShape2D_f61un")

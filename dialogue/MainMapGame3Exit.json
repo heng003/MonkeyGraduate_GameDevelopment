@@ -1,0 +1,12 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+		  "text": "My memory’s better than I thought. Or maybe I’m just lucky.",
+	  "next_id": -1
+	}
+  ]
+}

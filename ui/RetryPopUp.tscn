@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://84e0rkrvuk2y" path="res://ui/RetryPopUp.gd" id="1_t6xsl"]
 [ext_resource type="Texture2D" uid="uid://dv5t152x866q4" path="res://assets/ui/GUI.png" id="2_gp52o"]
-[ext_resource type="Theme" uid="uid://c44qpteexvof1" path="res://ui/Default.tres" id="3_f8ngo"]
+[ext_resource type="Theme" uid="uid://dnh2711stdnqi" path="res://ui/Default.tres" id="3_f8ngo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lefjq"]
 texture = ExtResource("2_gp52o")
@@ -11,6 +11,8 @@ region_rect = Rect2(0, 96, 48, 32)
 [sub_resource type="Theme" id="Theme_eo5on"]
 
 [node name="RetryPopUp" type="CanvasLayer"]
+process_mode = 3
+visible = false
 script = ExtResource("1_t6xsl")
 
 [node name="Panel" type="Panel" parent="."]

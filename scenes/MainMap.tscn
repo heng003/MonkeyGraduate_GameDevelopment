@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_a1mhp"]
 [ext_resource type="Texture2D" uid="uid://ck11smlc0c1qj" path="res://assets/map/atlas_48x.png" id="3_82ayj"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="4_1kkdm"]
-[ext_resource type="PackedScene" path="res://characters/Lake_Uncle.tscn" id="4_6ic70"]
+[ext_resource type="PackedScene" uid="uid://c0crh3js5ax46" path="res://characters/Lake_Uncle.tscn" id="4_6ic70"]
 [ext_resource type="Texture2D" uid="uid://drxkn1kimyqds" path="res://assets/map/wall_top1.png" id="4_wehgl"]
 [ext_resource type="Texture2D" uid="uid://d15e0yf4infbt" path="res://assets/map/Grass.png" id="5_6ic70"]
 [ext_resource type="Texture2D" uid="uid://didkkjs3mfxld" path="res://assets/map/wall-8 - 2 tiles tall-transparency.png" id="5_nmjbi"]

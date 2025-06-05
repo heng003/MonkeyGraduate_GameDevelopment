@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlkwcskpeivy"]
+
+[ext_resource type="AudioStream" uid="uid://dkgo54lg83jyd" path="res://assets/audio/incorrect-answer.mp3" id="1_124wh"]
+
+[node name="WrongAnswerSoundEffect" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_124wh")
+volume_db = 7.704

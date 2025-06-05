@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://blkja33actvwj"]
+
+[ext_resource type="Script" uid="uid://bx2noli40y35c" path="res://ui/Bus.gd" id="1_irxyt"]
+[ext_resource type="Texture2D" uid="uid://o5i46vmm105m" path="res://assets/components/Bus_moving.png" id="2_3q6ey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3woc8"]
+atlas = ExtResource("2_3q6ey")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjudn"]
+atlas = ExtResource("2_3q6ey")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16vqx"]
+atlas = ExtResource("2_3q6ey")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df1o4"]
+atlas = ExtResource("2_3q6ey")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8cpr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3woc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjudn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16vqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df1o4")
+}],
+"loop": true,
+"name": &"Bus_moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdw60"]
+size = Vector2(388, 187)
+
+[node name="Bus" type="Area2D"]
+script = ExtResource("1_irxyt")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(200, 106)
+scale = Vector2(5.8125, 5.8125)
+sprite_frames = SubResource("SpriteFrames_n8cpr")
+animation = &"Bus_moving"
+frame = 3
+frame_progress = 0.14093
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(194, 96.5)
+shape = SubResource("RectangleShape2D_mdw60")

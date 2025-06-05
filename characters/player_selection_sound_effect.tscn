@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwkqdpyqqbgxh"]
+
+[ext_resource type="AudioStream" uid="uid://fso4pngdognk" path="res://assets/audio/sound_player_selection.mp3" id="1_mcilv"]
+
+[node name="PlayerSelectionSoundEffect" type="AudioStreamPlayer"]
+stream = ExtResource("1_mcilv")

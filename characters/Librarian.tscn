@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://doi3wfhcmh5ou"]
+[gd_scene load_steps=11 format=3 uid="uid://doi3wfhcmh5ou"]
 
 [ext_resource type="Script" uid="uid://biknvkqfda06c" path="res://characters/Librarian.gd" id="1_hvep3"]
 [ext_resource type="Texture2D" uid="uid://co4ug00ex3xqb" path="res://assets/characters/Librarian/librarian_idle.png" id="1_np34x"]
+[ext_resource type="Script" uid="uid://dfci1ae3w7e6f" path="res://characters/quiz_area.gd" id="3_ci8b4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43ixd"]
 atlas = ExtResource("1_np34x")
@@ -42,17 +43,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a58ko"]
 size = Vector2(60, 73)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvep3"]
+size = Vector2(59, 144)
+
 [node name="Librarian" type="CharacterBody2D"]
 script = ExtResource("1_hvep3")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(66, 157)
 scale = Vector2(3.375, 3.375)
 sprite_frames = SubResource("SpriteFrames_6slyv")
 animation = &"idle"
 frame_progress = 0.877506
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(64, 158.5)
 shape = SubResource("RectangleShape2D_a58ko")
+
+[node name="QuizArea" type="Area2D" parent="."]
+script = ExtResource("3_ci8b4")
+dialogue_path = "Game2Quiz.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuizArea"]
+position = Vector2(-0.5, 35)
+shape = SubResource("RectangleShape2D_hvep3")

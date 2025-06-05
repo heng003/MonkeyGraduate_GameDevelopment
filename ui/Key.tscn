@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cws0k4l4k5pp0"]
+[gd_scene load_steps=10 format=3 uid="uid://cws0k4l4k5pp0"]
 
 [ext_resource type="Script" uid="uid://c8ap2pixg1l7m" path="res://ui/Key.gd" id="1_5cq1t"]
 [ext_resource type="Texture2D" uid="uid://cucmoquyoqo6w" path="res://assets/components/key_idle.png" id="1_fua5u"]
+[ext_resource type="AudioStream" uid="uid://cetrf0huotj1s" path="res://assets/audio/audio_key_collected.wav" id="3_ael8s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cq1t"]
 atlas = ExtResource("1_fua5u")
@@ -51,10 +52,11 @@ position = Vector2(-0.5, -1.5)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_b60tk")
 animation = &"key_idle"
-frame = 2
-frame_progress = 0.213885
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -1.5)
 rotation = 0.785397
 shape = SubResource("CapsuleShape2D_xq7pi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ael8s")

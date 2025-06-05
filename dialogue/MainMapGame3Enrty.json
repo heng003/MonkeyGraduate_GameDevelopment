@@ -1,0 +1,12 @@
+{
+ 	"force_start" : 0,
+	"is_random": 0,
+	"nodes" : [
+	{
+	  "id": 0,
+	  "name": "Monyet",
+		  "text": "There’s a lake blocking the road… how can I pass it?",
+	  "next_id": -1
+	}
+  ]
+}

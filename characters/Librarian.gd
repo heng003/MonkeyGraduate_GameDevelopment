@@ -6,3 +6,5 @@ func _physics_process(_delta: float) -> void:
 	sprite_2d.play()
 	velocity = Vector2.ZERO
 	move_and_slide()
+	
+	
