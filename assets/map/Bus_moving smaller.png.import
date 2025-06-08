@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3vhdhhmnjryx"
-path="res://.godot/imported/Black_BUS_CLEAN_8D_000-sheet (1).png-779b3c8be860b3c92c6b712335078b62.ctex"
+uid="uid://dx5c25a4ex2nu"
+path="res://.godot/imported/Bus_moving smaller.png-92755d39a6e2ebf44905f41133563a5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/map/Black_BUS_CLEAN_8D_000-sheet (1).png"
-dest_files=["res://.godot/imported/Black_BUS_CLEAN_8D_000-sheet (1).png-779b3c8be860b3c92c6b712335078b62.ctex"]
+source_file="res://assets/map/Bus_moving smaller.png"
+dest_files=["res://.godot/imported/Bus_moving smaller.png-92755d39a6e2ebf44905f41133563a5f.ctex"]
 
 [params]
 

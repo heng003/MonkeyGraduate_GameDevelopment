@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bvewrac7g20ac"]
+[gd_scene load_steps=29 format=3 uid="uid://bvewrac7g20ac"]
 
 [ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
 [ext_resource type="Texture2D" uid="uid://c5i4ees6rmrj3" path="res://assets/map/TopDownHouse_FloorsAndWalls.png" id="2_8xv86"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="3_mua0o"]
 [ext_resource type="PackedScene" uid="uid://bnbexqnfeyiih" path="res://characters/Lecturer_2.tscn" id="4_16hu5"]
 [ext_resource type="Texture2D" uid="uid://cdwcy07icxv0a" path="res://assets/map/Room_Builder_free_48x48.png" id="4_n171a"]
-[ext_resource type="Texture2D" uid="uid://ccbi3s8ovfv72" path="res://assets/map/TopDownHouse_DoorsAndWindows.png" id="5_uva1g"]
 [ext_resource type="PackedScene" uid="uid://cws0k4l4k5pp0" path="res://ui/Key.tscn" id="6_16hu5"]
 [ext_resource type="Texture2D" uid="uid://drah122h5frpg" path="res://assets/map/Interiors_free_48x48.png" id="7_kk1q1"]
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="15_noa2v"]
@@ -16602,189 +16601,6 @@ texture = ExtResource("2_y3wct")
 2:13/0 = 0
 2:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1earx"]
-texture = ExtResource("5_uva1g")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:0/0 = 0
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:0/0 = 0
-11:0/0 = 0
-12:0/0 = 0
-13:0/0 = 0
-14:0/0 = 0
-15:0/0 = 0
-16:0/0 = 0
-17:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:1/0 = 0
-9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-15:1/0 = 0
-16:1/0 = 0
-17:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:2/0 = 0
-9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:2/0 = 0
-11:2/0 = 0
-12:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-15:2/0 = 0
-16:2/0 = 0
-17:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-14:3/0 = 0
-15:3/0 = 0
-16:3/0 = 0
-17:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-16:4/0 = 0
-17:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-16:5/0 = 0
-17:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-16:6/0 = 0
-17:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-15:7/0 = 0
-16:7/0 = 0
-17:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-16:8/0 = 0
-17:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-16:9/0 = 0
-17:9/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_heyx7"]
 texture = ExtResource("7_kk1q1")
 3:2/0 = 0
@@ -24419,7 +24235,6 @@ texture = ExtResource("7_kk1q1")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_n171a")
 sources/0 = SubResource("TileSetAtlasSource_ugbry")
-sources/3 = SubResource("TileSetAtlasSource_1earx")
 sources/6 = SubResource("TileSetAtlasSource_heyx7")
 pattern_0 = SubResource("TileMapPattern_uva1g")
 pattern_1 = SubResource("TileMapPattern_noa2v")
@@ -24437,7 +24252,7 @@ _data = {
 }
 point_count = 2
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_mua0o")
 
 [node name="Ground" type="TileMap" parent="."]

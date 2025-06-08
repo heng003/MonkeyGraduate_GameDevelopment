@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dey34thkcw1pe"
-path="res://.godot/imported/Buildings-Batch-1 (1) (2).png-1f1a6ad2370670cd52627c043a13b2cf.ctex"
+uid="uid://bx7bm3bac74ps"
+path="res://.godot/imported/Bus_Stop.png-e1ca104fa66ade5cc1545112e0e2d9c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/map/Buildings-Batch-1 (1) (2).png"
-dest_files=["res://.godot/imported/Buildings-Batch-1 (1) (2).png-1f1a6ad2370670cd52627c043a13b2cf.ctex"]
+source_file="res://assets/map/Bus_Stop.png"
+dest_files=["res://.godot/imported/Bus_Stop.png-e1ca104fa66ade5cc1545112e0e2d9c6.ctex"]
 
 [params]
 
