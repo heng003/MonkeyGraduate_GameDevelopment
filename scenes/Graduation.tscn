@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp0d6d57udouq"]
+[gd_scene load_steps=5 format=3 uid="uid://dp0d6d57udouq"]
 
-[ext_resource type="Script" uid="uid://cu7hfcqfo2xpj" path="res://scripts/Graduation.gd" id="1_26txv"]
+[ext_resource type="Script" path="res://scripts/Graduation.gd" id="1_26txv"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_avm52"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="3_cmxrk"]
+
+[sub_resource type="TileSet" id="TileSet_26txv"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_26txv")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_avm52")]
+[node name="Ground" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_26txv")
+format = 2
+
+[node name="Wall" type="TileMap" parent="."]
+format = 2
+
+[node name="Monyet" parent="." instance=ExtResource("2_avm52")]
+position = Vector2(514, 281)
 
 [node name="DialogueManager" parent="." instance=ExtResource("3_cmxrk")]
+visible = false
