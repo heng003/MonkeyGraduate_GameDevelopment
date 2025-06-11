@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://lnn1hadk53ha"]
+
+[ext_resource type="Texture2D" uid="uid://b7dn0rd66fwxe" path="res://assets/characters/Cat_Obstacles/CowCatBox_Idle.png" id="1_3yv7f"]
+[ext_resource type="Script" uid="uid://65cpprrv83le" path="res://characters/Cat_Obstacles/Cow_Cat_Box_1.gd" id="1_qaweq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaweq"]
+atlas = ExtResource("1_3yv7f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxpcf"]
+atlas = ExtResource("1_3yv7f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa5bo"]
+atlas = ExtResource("1_3yv7f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o7et"]
+atlas = ExtResource("1_3yv7f")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0flw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaweq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxpcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa5bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o7et")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os7f6"]
+size = Vector2(58, 60)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_qaweq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(37.75, 39.75)
+scale = Vector2(2.32813, 2.32813)
+sprite_frames = SubResource("SpriteFrames_k0flw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38, 45)
+shape = SubResource("RectangleShape2D_os7f6")
