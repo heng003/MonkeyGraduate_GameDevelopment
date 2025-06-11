@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf0351lfeydu"]
+
+[ext_resource type="Script" uid="uid://c6j8heq1s8tsv" path="res://characters/Vice_Chancellor.gd" id="1_pk750"]
+[ext_resource type="Texture2D" uid="uid://c45svr12b3nmw" path="res://assets/characters/Vice Chancellor/ViceChancellor_idle.png" id="2_31f7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f253l"]
+atlas = ExtResource("2_31f7s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd78u"]
+atlas = ExtResource("2_31f7s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at7mh"]
+atlas = ExtResource("2_31f7s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xbv6"]
+atlas = ExtResource("2_31f7s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10wvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f253l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd78u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at7mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xbv6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggmvb"]
+size = Vector2(50, 84)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_pk750")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(29, 41)
+scale = Vector2(3.07813, 3.07813)
+sprite_frames = SubResource("SpriteFrames_10wvj")
+frame = 3
+frame_progress = 0.301787
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29, 44)
+shape = SubResource("RectangleShape2D_ggmvb")
