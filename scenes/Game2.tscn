@@ -14,9 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://d4hy6cibq6ila" path="res://ui/Student_Card.tscn" id="7_4mt8w"]
 [ext_resource type="Texture2D" uid="uid://cgv2qnum4rgkt" path="res://assets/map/Flower.png" id="10_lnh4t"]
 [ext_resource type="AudioStream" uid="uid://68n1lkk42hxx" path="res://assets/audio/quiz-bgm.mp3" id="13_a1tbd"]
-[ext_resource type="PackedScene" path="res://characters/player_selection_sound_effect.tscn" id="14_a1tbd"]
+[ext_resource type="PackedScene" uid="uid://cwkqdpyqqbgxh" path="res://characters/player_selection_sound_effect.tscn" id="14_a1tbd"]
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="14_katk2"]
-[ext_resource type="Script" path="res://scripts/book_shelf.gd" id="15_v1moh"]
+[ext_resource type="Script" uid="uid://dpwy81slpbx4k" path="res://scripts/book_shelf.gd" id="15_v1moh"]
 [ext_resource type="AudioStream" uid="uid://ca7as7k0tlu6h" path="res://assets/audio/flipping-book.mp3" id="16_katk2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mn1ld"]

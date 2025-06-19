@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0crh3js5ax46"]
+[gd_scene load_steps=11 format=3 uid="uid://c0crh3js5ax46"]
 
 [ext_resource type="Script" uid="uid://ba63ot6krqx8a" path="res://characters/Lake_Uncle.gd" id="1_05apu"]
 [ext_resource type="Texture2D" uid="uid://bh0owypw2ttfv" path="res://assets/characters/Lake_Uncle/Lake_Uncle_idle.png" id="1_hwyi6"]
+[ext_resource type="Script" uid="uid://c330ip38hoipm" path="res://characters/trigger_lake_uncle_dialogue_area.gd" id="3_gut73"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_05apu"]
 atlas = ExtResource("1_hwyi6")
@@ -42,6 +43,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcu5c"]
 size = Vector2(54, 75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7ihr"]
+size = Vector2(63.25, 83)
+
 [node name="Lake_Uncle" type="CharacterBody2D"]
 script = ExtResource("1_05apu")
 
@@ -56,3 +60,10 @@ frame_progress = 0.710382
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(27, 27.5)
 shape = SubResource("RectangleShape2D_jcu5c")
+
+[node name="TriggerDialogueArea" type="Area2D" parent="."]
+script = ExtResource("3_gut73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerDialogueArea"]
+position = Vector2(26.375, 27.5)
+shape = SubResource("RectangleShape2D_c7ihr")
