@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bvewrac7g20ac"]
+[gd_scene load_steps=33 format=3 uid="uid://bvewrac7g20ac"]
 
 [ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
 [ext_resource type="Texture2D" uid="uid://c5i4ees6rmrj3" path="res://assets/map/TopDownHouse_FloorsAndWalls.png" id="2_8xv86"]
@@ -24252,6 +24252,58 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_l3p6r"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v1q5i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_54x1v"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11fae"]
+_data = {
+&"RESET": SubResource("Animation_v1q5i"),
+&"fade_in": SubResource("Animation_54x1v"),
+&"fade_out": SubResource("Animation_l3p6r")
+}
+
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_mua0o")
 
@@ -24312,3 +24364,19 @@ rotation = 1.57729
 loop = false
 
 [node name="PlayerSelectionSoundEffect" parent="." instance=ExtResource("16_1earx")]
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_11fae")
+}

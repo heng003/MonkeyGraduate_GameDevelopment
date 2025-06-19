@@ -6,6 +6,26 @@ const SPEED = 250
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 var last_direction: String = "front"  # default direction
 var can_move: bool = true  # ← Add this line
+<<<<<<< Updated upstream
+=======
+var is_in_lake: bool = false
+var is_on_bridge: bool = false
+var bridge_area: Area2D = null
+var lake_area: Area2D = null
+@onready var fall_into_lake_sound: AudioStreamPlayer = $'../SoundFallIntoLake'
+
+
+func _ready():    
+	if get_parent().has_node("BridgeArea"):
+		bridge_area = get_node("../BridgeArea")
+		bridge_area.body_entered.connect(_on_BridgeArea_body_entered)
+		bridge_area.body_exited.connect(_on_BridgeArea_body_exited)
+
+	if get_parent().has_node("LakeArea"):
+		lake_area = get_node("../LakeArea")
+		lake_area.body_entered.connect(_on_LakeArea_body_entered)
+		lake_area.body_exited.connect(_on_LakeArea_body_exited)
+>>>>>>> Stashed changes
 
 func _physics_process(_delta):
 	sprite_2d.play()
