@@ -1,5 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://hlsm87vuj55i"]
-
+[gd_scene load_steps=65 format=3 uid="uid://hlsm87vuj55i"]
 
 [ext_resource type="Script" uid="uid://11vi8y4hu4y4" path="res://scripts/MainMap.gd" id="1_5hgy3"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_a1mhp"]
@@ -25,12 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://b5aamqg052lrb" path="res://assets/map/3.png" id="13_qku8b"]
 [ext_resource type="Texture2D" uid="uid://dnrnithco1774" path="res://assets/map/University_of_Malaya-Logo.png" id="16_yi7tv"]
 [ext_resource type="Texture2D" uid="uid://cgv2qnum4rgkt" path="res://assets/map/Flower.png" id="17_0n7te"]
-
 [ext_resource type="Script" uid="uid://dasmeltk5k3m5" path="res://scripts/trigger_bridge_visible.gd" id="22_0n7te"]
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="25_nrnsd"]
 [ext_resource type="AudioStream" uid="uid://xbyxbd5ovky7" path="res://assets/audio/fall_into_lake.mp3" id="27_518xq"]
 [ext_resource type="Script" uid="uid://bi2id65tu58yr" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82ayj"]
 texture = ExtResource("5_6ic70")
@@ -82386,58 +82383,6 @@ size = Vector2(1036, 367)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1q5i"]
 size = Vector2(60, 61.25)
 
-[sub_resource type="Animation" id="Animation_l3p6r"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FadeRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_v1q5i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FadeRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_54x1v"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FadeRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_11fae"]
-_data = {
-&"RESET": SubResource("Animation_v1q5i"),
-&"fade_in": SubResource("Animation_54x1v"),
-&"fade_out": SubResource("Animation_l3p6r")
-}
-
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_5hgy3")
 
@@ -82479,6 +82424,7 @@ position = Vector2(8239, 592)
 visible = false
 
 [node name="BGM" parent="." instance=ExtResource("25_nrnsd")]
+stream = null
 
 [node name="TriggerBridgeVisible" type="Area2D" parent="." node_paths=PackedStringArray("bridge_tilemap", "bridge_collision")]
 position = Vector2(8287, 774)
@@ -82522,19 +82468,3 @@ script = ExtResource("28_l3p6r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game1Trigger"]
 position = Vector2(1, -2.375)
 shape = SubResource("RectangleShape2D_v1q5i")
-
-[node name="FadeLayer" type="CanvasLayer" parent="."]
-
-[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeLayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_11fae")
-}

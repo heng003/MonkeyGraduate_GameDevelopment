@@ -11,6 +11,8 @@ var total_keys = 2
 var keys_collected = 0
 
 func _ready():
+	$FadeLayer.visible = true
+	$FadeLayer/AnimationPlayer.play("fade_in")
 	_play_dialogue(entry_dialogue_path)
 
 func _play_dialogue(dialogue_path: String) -> void:

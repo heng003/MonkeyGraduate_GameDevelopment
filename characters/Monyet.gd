@@ -7,16 +7,21 @@ var last_direction: String = "front"  # default direction
 var can_move: bool = true  # ← Add this line
 var is_in_lake: bool = false
 var is_on_bridge: bool = false
-@onready var bridge_area: Area2D = $'../BridgeArea'
-@onready var lake_area: Area2D = $'../LakeArea'
+var bridge_area: Area2D = null
+var lake_area: Area2D = null
 @onready var fall_into_lake_sound: AudioStreamPlayer = $'../SoundFallIntoLake'
 
 
 func _ready():    
-	bridge_area.body_entered.connect(_on_BridgeArea_body_entered)
-	bridge_area.body_exited.connect(_on_BridgeArea_body_exited)
-	lake_area.body_entered.connect(_on_LakeArea_body_entered)
-	lake_area.body_exited.connect(_on_LakeArea_body_exited)
+	if get_parent().has_node("BridgeArea"):
+		bridge_area = get_node("../BridgeArea")
+		bridge_area.body_entered.connect(_on_BridgeArea_body_entered)
+		bridge_area.body_exited.connect(_on_BridgeArea_body_exited)
+
+	if get_parent().has_node("LakeArea"):
+		lake_area = get_node("../LakeArea")
+		lake_area.body_entered.connect(_on_LakeArea_body_entered)
+		lake_area.body_exited.connect(_on_LakeArea_body_exited)
 
 func _physics_process(_delta):
 	sprite_2d.play()
