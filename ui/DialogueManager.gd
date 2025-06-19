@@ -54,6 +54,7 @@ func load_json_file(fname):
 
 #-----Traversing Graph-----#
 func start_dialogue(fname):
+	print("File name: ", fname)
 	load_json_file(fname)
 	
 	if nodes and nodes.size() > 0:
