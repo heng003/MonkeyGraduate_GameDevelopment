@@ -2,10 +2,21 @@ extends CharacterBody2D
 
 
 const SPEED = 250
-
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 var last_direction: String = "front"  # default direction
 var can_move: bool = true  # ← Add this line
+var is_in_lake: bool = false
+var is_on_bridge: bool = false
+@onready var bridge_area: Area2D = $'../BridgeArea'
+@onready var lake_area: Area2D = $'../LakeArea'
+@onready var fall_into_lake_sound: AudioStreamPlayer = $'../SoundFallIntoLake'
+
+
+func _ready():    
+	bridge_area.body_entered.connect(_on_BridgeArea_body_entered)
+	bridge_area.body_exited.connect(_on_BridgeArea_body_exited)
+	lake_area.body_entered.connect(_on_LakeArea_body_entered)
+	lake_area.body_exited.connect(_on_LakeArea_body_exited)
 
 func _physics_process(_delta):
 	sprite_2d.play()
@@ -14,7 +25,7 @@ func _physics_process(_delta):
 		move_and_slide()
 		play_idle_animation()
 		return
-
+		
 	var input_vector = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_up"):
@@ -36,7 +47,8 @@ func _physics_process(_delta):
 		play_idle_animation()
 	else:
 		play_walk_animation(input_vector)
-
+		
+		
 func play_idle_animation():
 	match last_direction:
 		"front":
@@ -67,3 +79,27 @@ func play_walk_animation(input_vector: Vector2):
 		sprite_2d.animation = "right_walk"
 		sprite_2d.flip_h = true
 		last_direction = "left"
+		
+func trigger_fall():
+	fall_into_lake_sound.play()
+	print("Game over")
+	
+func _on_BridgeArea_body_entered(body):
+	if body == self :
+		is_on_bridge = true
+
+func _on_BridgeArea_body_exited(body):
+	if body == self :
+		is_on_bridge = false
+		if(is_in_lake):
+			trigger_fall()
+			
+func _on_LakeArea_body_entered(body):
+	if body == self :
+		is_in_lake = true
+		if(not is_on_bridge):
+			trigger_fall()
+			
+func _on_LakeArea_body_exited(body):
+	if body == self :
+		is_in_lake = false
