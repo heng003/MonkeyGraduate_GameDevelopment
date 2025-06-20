@@ -4,10 +4,12 @@ extends Node2D
 @onready var player = $Monyet 
 
 var entry_dialogue_path = "MainMapEntry.json"
-var game1_entry_dialogue_path = "MainMapGame1Enrty.json"
+var game1_entry_dialogue_path = "MainMapGame1Entry.json"
 var game1_exit_dialogue_path = "MainMapGame1Exit.json"
-var game2_entry_dialogue_path = "MainMapGame2Enrty.json"
+var game2_entry_dialogue_path = "MainMapGame2Entry.json"
 var game2_exit_dialogue_path = "MainMapGame2Exit.json"
+var game4_entry_dialogue_path = "MainMapGame4Entry.json"
+var game4_exit_dialogue_path = "MainMapGame4Exit.json"
 var current_dialogue_path = ""
 
 func _ready():

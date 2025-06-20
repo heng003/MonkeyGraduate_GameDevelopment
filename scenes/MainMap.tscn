@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://bi2id65tu58yr" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
 [ext_resource type="Script" uid="uid://c0sieji24b1ye" path="res://scripts/game_2_trigger.gd" id="29_v1q5i"]
 
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82ayj"]
 texture = ExtResource("5_6ic70")
 133:8/0 = 0
