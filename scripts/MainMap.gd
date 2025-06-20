@@ -11,7 +11,19 @@ var game2_exit_dialogue_path = "MainMapGame2Exit.json"
 var current_dialogue_path = ""
 
 func _ready():
-	_play_dialogue(entry_dialogue_path)
+	if GameManager.return_point == "game1":
+		player.global_position = $LectureHallExitMarker.global_position
+	elif GameManager.return_point == "game2":
+		player.global_position = $LibraryExitMarker.global_position
+	elif not GameManager.has_seen_mainmap_entry:
+		_play_dialogue(entry_dialogue_path)
+		GameManager.has_seen_mainmap_entry = true
+
+	player.get_node("Camera2D").make_current()
+	player.can_move = true
+	GameManager.return_point = "" # reset after use
+	$FadeLayer.visible = true
+	$FadeLayer/AnimationPlayer.play("fade_in")
 
 func trigger_game1_entry_dialogue():
 	_play_dialogue(game1_entry_dialogue_path)
@@ -20,7 +32,8 @@ func trigger_game1_exit_dialogue():
 	_play_dialogue(game1_exit_dialogue_path)
 
 func trigger_game2_entry_dialogue():
-	_play_dialogue(game2_entry_dialogue_path)
+	if GameManager.has_completed_game1:
+		_play_dialogue(game2_entry_dialogue_path)
 
 func trigger_game2_exit_dialogue():
 	_play_dialogue(game2_exit_dialogue_path)
@@ -48,5 +61,8 @@ func _on_dialogue_finished():
 	dialogue_manager.dialogue_finished.disconnect(_on_dialogue_finished)
 	player.can_move = true
 	
-	if current_dialogue_path == game1_entry_dialogue_path:
-		fade_and_switch_scene("res://scenes/Game1.tscn")
+	match current_dialogue_path:
+		game1_entry_dialogue_path:
+			fade_and_switch_scene("res://scenes/Game1.tscn")
+		game2_entry_dialogue_path:
+			fade_and_switch_scene("res://scenes/Game2.tscn")

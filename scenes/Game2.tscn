@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dhmhyq8a0nfvq"]
+[gd_scene load_steps=46 format=3 uid="uid://dhmhyq8a0nfvq"]
 
 [ext_resource type="Script" uid="uid://d2y627vsl5dml" path="res://scripts/Game2.gd" id="1_eetn8"]
 [ext_resource type="Texture2D" uid="uid://7hv64y1xnrgv" path="res://assets/map/Tileset-Terrain2.png" id="2_a58ko"]
@@ -47341,6 +47341,58 @@ size = Vector2(82, 104)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnh4t"]
 size = Vector2(81, 101)
 
+[sub_resource type="Animation" id="Animation_lnh4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mn1ld"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rjeic"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxmsd"]
+_data = {
+&"RESET": SubResource("Animation_lnh4t"),
+&"fade_in": SubResource("Animation_mn1ld"),
+&"fade_out": SubResource("Animation_rjeic")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_eetn8")
 
@@ -47414,3 +47466,19 @@ stream = ExtResource("13_a1tbd")
 [node name="FlippingBookSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_katk2")
 volume_db = 9.563
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_fxmsd")
+}
