@@ -43,7 +43,6 @@ func load_json_file(fname):
 			var json_result = json.get_data()
 			is_random = bool(json_result.get("is_random", false))
 			nodes = json_result.get("nodes", [])
-			print("nodes: ", nodes[0].text)
 			current_id = 0
 		else:
 			print("Dialogue: JSON Parse Error")
@@ -51,10 +50,11 @@ func load_json_file(fname):
 		file.close()
 	else:
 		print("Dialogue: File Open Error")
+		print('filename:', fname)
+		print("res://dialogue/" + fname)
 
 #-----Traversing Graph-----#
 func start_dialogue(fname):
-	print("File name: ", fname)
 	load_json_file(fname)
 	
 	if nodes and nodes.size() > 0:
@@ -92,7 +92,6 @@ func load_node(id):
 		print("Could not load node with ID:", current_id)
 		end_dialogue()
 	else:
-		print("Calling update_ui for ID:", current_id)
 		update_ui()
 
 func try_load_node(id):
@@ -102,7 +101,6 @@ func try_load_node(id):
 			current_text = node.get("text", "")
 			current_next_id = int(node.get("next_id", -1))
 			current_choices = node.get("choices", [])
-			print("Loaded node with ID:", id)
 			return true
 	return false
 

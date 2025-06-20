@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://dbupi0givadq"]
 
-[ext_resource type="Script" path="res://scripts/Game4.gd" id="1_6tlln"]
+[ext_resource type="Script" uid="uid://dcoyfjm7kb3f8" path="res://scripts/Game4.gd" id="1_6tlln"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="1_vpobs"]
-[ext_resource type="PackedScene" path="res://characters/Bus_Driver.tscn" id="2_hsk85"]
+[ext_resource type="PackedScene" uid="uid://2e7pg5dayw55" path="res://characters/Bus_Driver.tscn" id="2_hsk85"]
 [ext_resource type="Texture2D" uid="uid://7hv64y1xnrgv" path="res://assets/map/Tileset-Terrain2.png" id="2_ydowr"]
-[ext_resource type="PackedScene" path="res://ui/Bus.tscn" id="3_hsk85"]
+[ext_resource type="PackedScene" uid="uid://blkja33actvwj" path="res://ui/Bus.tscn" id="3_hsk85"]
 [ext_resource type="Texture2D" uid="uid://cgv2qnum4rgkt" path="res://assets/map/Flower.png" id="3_qp144"]
 [ext_resource type="Texture2D" uid="uid://dnrnithco1774" path="res://assets/map/University_of_Malaya-Logo.png" id="4_u3jk7"]
 [ext_resource type="Texture2D" uid="uid://b0kkhv73m64ec" path="res://assets/map/Game4_Obstacle.png" id="5_ak482"]

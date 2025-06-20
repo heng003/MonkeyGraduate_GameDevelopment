@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://dp0d6d57udouq"]
 
-[ext_resource type="Script" path="res://scripts/Graduation.gd" id="1_26txv"]
+[ext_resource type="Script" uid="uid://cu7hfcqfo2xpj" path="res://scripts/Graduation.gd" id="1_26txv"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_avm52"]
 [ext_resource type="Texture2D" uid="uid://ck11smlc0c1qj" path="res://assets/map/atlas_48x.png" id="2_cmxrk"]
 [ext_resource type="PackedScene" uid="uid://do82j83ev2tjs" path="res://ui/DialogueManager.tscn" id="3_cmxrk"]
