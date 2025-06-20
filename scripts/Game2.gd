@@ -12,6 +12,8 @@ var quiz_dialogue_path = "Game2Quiz.json"
 func _ready():
 	book_popup.popup_closed.connect(_on_popup_closed)
 	_play_dialogue(entry_dialogue_path)
+	$FadeLayer.visible = true
+	$FadeLayer/AnimationPlayer.play("fade_in")
 
 func trigger_library_quiz():
 	_play_dialogue(quiz_dialogue_path)
@@ -60,3 +62,25 @@ func show_um_motto():
 func _on_popup_closed():
 	player.can_move = true
 	game2_bgm.play()
+	
+func exit_to_main_map():
+	player.can_move = false
+	dialogue_manager.visible = true
+	dialogue_manager.start_dialogue("MainMapGame2Exit.json")
+
+	if dialogue_manager.dialogue_finished.is_connected(_on_exit_dialogue_finished):
+		dialogue_manager.dialogue_finished.disconnect(_on_exit_dialogue_finished)
+
+	dialogue_manager.dialogue_finished.connect(_on_exit_dialogue_finished)
+
+func _on_exit_dialogue_finished():
+	dialogue_manager.dialogue_finished.disconnect(_on_exit_dialogue_finished)
+
+	$FadeLayer.visible = true
+	$FadeLayer/AnimationPlayer.play("fade_out")
+	await $FadeLayer/AnimationPlayer.animation_finished
+
+	GameManager.current_level = max(GameManager.current_level, 2)
+	GameManager.returning_from_game2 = true
+	GameManager.return_point = "game2"
+	get_tree().change_scene_to_file("res://scenes/MainMap.tscn")

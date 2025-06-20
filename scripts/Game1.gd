@@ -5,6 +5,7 @@ extends Node2D
 @onready var sound_player_select = $PlayerSelectionSoundEffect
 
 var entry_dialogue_path = "Game1Entry.json"
+var exit_dialogue_path = "MainMapGame1Exit.json"
 var lecturer1_dialogue_path = "Game1Lecturer1.json"
 var lecturer2_dialogue_path = "Game1Lecturer2.json"
 var total_keys = 2 
@@ -46,4 +47,39 @@ func _on_retry_pressed():
 
 func _on_back_pressed():
 	print("Back pressed!")
-	# Go back to menu or previous screen
+	get_tree().paused = false
+	GameManager.return_point = "game1"
+	
+	# Start fade out
+	$FadeLayer.visible = true
+	$FadeLayer/AnimationPlayer.play("fade_out")
+
+	# Wait for fade out to complete before changing scene
+	await $FadeLayer/AnimationPlayer.animation_finished
+
+	get_tree().change_scene_to_file("res://scenes/MainMap.tscn")
+
+func exit_to_main_map():
+	player.can_move = false
+	dialogue_manager.visible = true
+	dialogue_manager.start_dialogue(exit_dialogue_path)
+
+	# Prevent multiple connections
+	if dialogue_manager.dialogue_finished.is_connected(_on_exit_dialogue_finished):
+		dialogue_manager.dialogue_finished.disconnect(_on_exit_dialogue_finished)
+
+	dialogue_manager.dialogue_finished.connect(_on_exit_dialogue_finished)
+
+func _on_exit_dialogue_finished():
+	dialogue_manager.dialogue_finished.disconnect(_on_exit_dialogue_finished)
+
+	# Start fade out
+	$FadeLayer.visible = true
+	$FadeLayer/AnimationPlayer.play("fade_out")
+	await $FadeLayer/AnimationPlayer.animation_finished
+
+	# Save progress and switch scene
+	GameManager.current_level = 1
+	GameManager.has_completed_game1 = true 
+	GameManager.return_point = "game1"
+	get_tree().change_scene_to_file("res://scenes/MainMap.tscn")

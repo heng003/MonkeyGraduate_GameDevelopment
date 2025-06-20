@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://hlsm87vuj55i"]
+[gd_scene load_steps=71 format=3 uid="uid://hlsm87vuj55i"]
 
 [ext_resource type="Script" uid="uid://11vi8y4hu4y4" path="res://scripts/MainMap.gd" id="1_5hgy3"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_a1mhp"]
@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="25_nrnsd"]
 [ext_resource type="AudioStream" uid="uid://xbyxbd5ovky7" path="res://assets/audio/fall_into_lake.mp3" id="27_518xq"]
 [ext_resource type="Script" uid="uid://bi2id65tu58yr" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
+[ext_resource type="Script" uid="uid://c0sieji24b1ye" path="res://scripts/game_2_trigger.gd" id="29_v1q5i"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82ayj"]
 texture = ExtResource("5_6ic70")
@@ -82435,6 +82437,9 @@ _data = {
 &"fade_out": SubResource("Animation_l3p6r")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3p6r"]
+size = Vector2(67.5, 117)
+
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_5hgy3")
 
@@ -82536,3 +82541,17 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_11fae")
 }
+
+[node name="LectureHallExitMarker" type="Marker2D" parent="."]
+position = Vector2(6020, 255)
+
+[node name="Game2Trigger" type="Area2D" parent="."]
+position = Vector2(7317, 570)
+script = ExtResource("29_v1q5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game2Trigger"]
+position = Vector2(3, -36)
+shape = SubResource("RectangleShape2D_l3p6r")
+
+[node name="LibraryExitMarker" type="Marker2D" parent="."]
+position = Vector2(7274, 617)

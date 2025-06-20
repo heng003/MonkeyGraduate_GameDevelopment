@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bvewrac7g20ac"]
+[gd_scene load_steps=35 format=3 uid="uid://bvewrac7g20ac"]
 
 [ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
 [ext_resource type="Texture2D" uid="uid://c5i4ees6rmrj3" path="res://assets/map/TopDownHouse_FloorsAndWalls.png" id="2_8xv86"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="15_noa2v"]
 [ext_resource type="PackedScene" uid="uid://cwkqdpyqqbgxh" path="res://characters/player_selection_sound_effect.tscn" id="16_1earx"]
 [ext_resource type="AudioStream" uid="uid://dfoa3rft180vg" path="res://assets/audio/sound_game_over.wav" id="16_heyx7"]
+[ext_resource type="Script" uid="uid://ogw0ry4gg73c" path="res://scripts/exit_trigger.gd" id="16_hxw3l"]
 [ext_resource type="AudioStream" uid="uid://c5bs7p6t4etwi" path="res://assets/audio/sound_waiting_response.wav" id="17_hxw3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kk1q1"]
@@ -24304,6 +24305,9 @@ _data = {
 &"fade_out": SubResource("Animation_l3p6r")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rmwx"]
+size = Vector2(52, 55)
+
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_mua0o")
 
@@ -24380,3 +24384,11 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_11fae")
 }
+
+[node name="ExitTrigger" type="Area2D" parent="."]
+position = Vector2(71, -40)
+script = ExtResource("16_hxw3l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
+position = Vector2(1, -2.5)
+shape = SubResource("RectangleShape2D_6rmwx")
