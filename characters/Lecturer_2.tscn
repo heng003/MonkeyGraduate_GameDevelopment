@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6evwi7yiheg7" path="res://assets/characters/Lecturer_2/lecturer2_front_idle.png" id="4_gcbpi"]
 [ext_resource type="Texture2D" uid="uid://dtbypprply0gd" path="res://assets/characters/Lecturer_2/lecturer2_right_walk.png" id="4_kjgkg"]
 [ext_resource type="Texture2D" uid="uid://twam7sqj4vbk" path="res://assets/characters/Lecturer_2/lecturer2_front_walk.png" id="5_f61un"]
-[ext_resource type="Script" uid="uid://d2j1mj56umsl7" path="res://characters/area_2d_on_lecturer_collide.gd" id="8_gcbpi"]
+[ext_resource type="Script" uid="uid://d2j1mj56umsl7" path="res://characters/Cat_Obstacles/area_2d_on_lecturer_collide.gd" id="8_gcbpi"]
 [ext_resource type="Script" uid="uid://d2odfexuyuv7t" path="res://characters/chase_area.gd" id="9_sfigc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcbpi"]
