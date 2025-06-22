@@ -28,6 +28,9 @@ func _ready():
 	$FadeLayer/AnimationPlayer.play("fade_in")
 
 func trigger_game1_entry_dialogue():
+	if GameManager.has_completed_game1:
+		print("Game 1 already completed. Entry blocked.")
+		return  # Do nothing
 	_play_dialogue(game1_entry_dialogue_path)
 
 func trigger_game1_exit_dialogue():

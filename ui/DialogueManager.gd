@@ -22,14 +22,25 @@ var skip_typing := false
 var ui_buttons = []
 
 signal dialogue_finished
+signal correct_answer
+signal wrong_answer
 
 func _ready():
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	ui_buttons.append($Panel/Buttons/Button0)
 	ui_buttons.append($Panel/Buttons/Button1)
 	ui_buttons.append($Panel/Buttons/Button2)
 	ui_buttons.append($Panel/Buttons/Button3)
-	# Seed random generator for random dialogues
+	for button in ui_buttons:
+		button.process_mode = Node.PROCESS_MODE_ALWAYS
+		button.mouse_filter = Control.MOUSE_FILTER_PASS 
+		button.focus_mode = Control.FOCUS_ALL
+	
 	seed(Time.get_unix_time_from_system())
+
+	for button in ui_buttons:
+		button.connect("mouse_entered", func(): print("Hovered:", button.name))
+		button.connect("pressed", func(): print("Pressed:", button.name))
 
 #-----Reading the File-----#
 func load_json_file(fname):
@@ -112,33 +123,35 @@ func update_ui() -> void:
 	# First, display the panel and name
 	await typing_effect(current_text)  # Only call this once
 
-	# After typing is done or skipped, show choices/buttons
+	# Clear all existing button connections
+	for button in ui_buttons:
+		if button.pressed.is_connected(_on_choice_selected):
+			button.pressed.disconnect(_on_choice_selected)
+		if button.pressed.is_connected(load_node):
+			button.pressed.disconnect(load_node)
+	
+	# Reset all buttons
 	for button in ui_buttons:
 		button.hide()
-		for connection in button.pressed.get_connections():
-			button.pressed.disconnect(connection["callable"])
+		button.disabled = false
+		button.modulate = Color(1, 1, 1)  # Reset to white
 
 	if current_choices.size() > 0:
-		for i in range(current_choices.size()):
-			if i >= ui_buttons.size():
-				break
-
-			var choice = current_choices[i]
-			ui_buttons[i].text = choice.get("text", "Choice")
-			ui_buttons[i].show()
-
-			# Clear existing signals
-			for connection in ui_buttons[i].pressed.get_connections():
-				ui_buttons[i].pressed.disconnect(connection["callable"])
-
-			# Connect button with visual feedback logic
-			ui_buttons[i].pressed.connect(Callable(self, "_on_choice_selected").bind(ui_buttons[i], choice))
-		
 		ui_button_container.show()
-	#else:
-		#ui_buttons[0].text = "Continue"
-		#ui_buttons[0].pressed.connect(Callable(self, "load_node").bind(current_next_id))
-		#ui_buttons[0].show()
+		for i in range(min(current_choices.size(), ui_buttons.size())):
+			var choice = current_choices[i]
+			var button = ui_buttons[i]
+			
+			button.text = choice.get("text", "Choice")
+			button.show()
+			
+			# Connect with the correct parameters
+			button.pressed.connect(_on_choice_selected.bind(choice), CONNECT_ONE_SHOT)
+	else:
+		# If no choices, show continue button
+		ui_buttons[0].text = "Continue"
+		ui_buttons[0].show()
+		ui_buttons[0].pressed.connect(load_node.bind(current_next_id), CONNECT_ONE_SHOT)
 
 func typing_effect(text: String) -> void:
 	is_typing = true
@@ -155,34 +168,42 @@ func typing_effect(text: String) -> void:
 
 	is_typing = false
 
-func _on_choice_selected(clicked_button: Button, choice: Dictionary) -> void:
+func _on_choice_selected(choice: Dictionary) -> void:
 	var root_node = get_tree().current_scene
-	var quiz_bgm = root_node.get_node("QuizBgm")
+	var quiz_bgm = root_node.get_node("QuizBgm") if root_node.has_node("QuizBgm") else null
+	
+	# Disable all buttons first
 	for button in ui_buttons:
-		if button != clicked_button:
-			button.disabled = true
-		else:
-			button.disabled = true
-			var is_correct = choice.get("is_correct", false)
-			if is_correct:
-				correct_answer_sound_effect.play()
-			else:
-				quiz_bgm.stop()
-				wrong_answer_sound_effect.play()
-				
-				
-			button.modulate = Color(0, 1, 0) if is_correct else Color(1, 0, 0)
+		button.disabled = true
+	
+	# Find which button was pressed
+	var pressed_button = null
+	for i in range(current_choices.size()):
+		if i < ui_buttons.size() and current_choices[i] == choice:
+			pressed_button = ui_buttons[i]
+			break
+	
+	# Play appropriate sound effect
+	var is_correct = choice.get("is_correct", false)
+	if is_correct:
+		correct_answer_sound_effect.play()
+		emit_signal("correct_answer")
+	else:
+		if quiz_bgm:
+			quiz_bgm.stop()
+		wrong_answer_sound_effect.play()
+		emit_signal("wrong_answer")
+	
+	# Visual feedback if we found the button
+	if pressed_button:
+		pressed_button.modulate = Color(0, 1, 0) if is_correct else Color(1, 0, 0)
 	
 	# Wait 1 second
 	await get_tree().create_timer(1.0).timeout
 	
-	# Hide button container
-	ui_button_container.hide()
-	
-	# Reset button
-	clicked_button.modulate = Color(1, 1, 1)  # white (original)
+	# Reset button colors
 	for button in ui_buttons:
-		button.disabled = false
+		button.modulate = Color(1, 1, 1)  # white (original)
 	
 	# Go to the next node
 	load_node(choice.get("next_id", -1))

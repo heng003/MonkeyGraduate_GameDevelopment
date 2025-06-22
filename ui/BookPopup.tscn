@@ -88,5 +88,3 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_82kqn")
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayerSelectionSoundEffect" parent="." instance=ExtResource("6_5olnk")]
-
-[connection signal="pressed" from="Panel/CloseButton" to="." method="hide_popup"]

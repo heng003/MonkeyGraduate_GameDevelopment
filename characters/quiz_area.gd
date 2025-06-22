@@ -8,7 +8,7 @@ func _ready():
 func _on_body_entered(body: Node):
 	if body.name == "Monyet":
 		body.set_physics_process(false)
-		get_tree().paused = true
+		body.can_move = false 
 		
 		var root_node = get_tree().current_scene
 		var quiz_bgm = root_node.get_node("QuizBgm")
@@ -22,7 +22,7 @@ func _on_body_entered(body: Node):
 			root_node._play_dialogue(dialogue_path)
 			await root_node.dialogue_manager.dialogue_finished
 		
-			get_tree().paused = false
+			body.can_move = true
 			body.set_physics_process(true)
 			quiz_bgm.stop()
 			game2_bgm.play()

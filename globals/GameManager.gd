@@ -6,6 +6,7 @@ var has_graduated = false
 var return_point = ""  # "game1", "game2"
 var has_seen_mainmap_entry = false
 var has_completed_game1 = false
+var has_completed_game2 = false
 
 func reset_game():
 	current_level = 0
@@ -14,3 +15,4 @@ func reset_game():
 	return_point = ""
 	has_seen_mainmap_entry = false
 	has_completed_game1 = false
+	has_completed_game2 = false
