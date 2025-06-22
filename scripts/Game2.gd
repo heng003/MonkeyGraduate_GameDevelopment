@@ -9,11 +9,22 @@ extends Node2D
 var entry_dialogue_path = "Game2Entry.json"
 var quiz_dialogue_path = "Game2Quiz.json"
 
+var correct_streak := 0
+
 func _ready():
-	book_popup.popup_closed.connect(_on_popup_closed)
+	book_popup.popup_closed.connect(Callable(self, "_on_popup_closed"))
+	
+	dialogue_manager.connect("correct_answer", Callable(self, "_on_quiz_correct"))
+	dialogue_manager.connect("wrong_answer",   Callable(self, "_on_quiz_wrong"))
+	
 	_play_dialogue(entry_dialogue_path)
 	$FadeLayer.visible = true
 	$FadeLayer/AnimationPlayer.play("fade_in")
+	$FadeLayer/AnimationPlayer.animation_finished.connect(Callable(self, "_on_fade_in_finished"))
+
+func _on_fade_in_finished(anim_name: String) -> void:
+	if anim_name == "fade_in":
+		$FadeLayer.visible = false
 
 func trigger_library_quiz():
 	_play_dialogue(quiz_dialogue_path)
@@ -83,4 +94,29 @@ func _on_exit_dialogue_finished():
 	GameManager.current_level = max(GameManager.current_level, 2)
 	GameManager.returning_from_game2 = true
 	GameManager.return_point = "game2"
+	get_tree().change_scene_to_file("res://scenes/MainMap.tscn")
+	
+func _on_quiz_correct():
+	correct_streak += 1
+	if correct_streak >= 3:
+		_on_all_quizzes_correct()
+	else:
+		print("Streak: ", correct_streak)	
+
+func _on_quiz_wrong():
+	correct_streak = 0
+	print("Streak reset")			
+
+func _on_all_quizzes_correct() -> void:
+	dialogue_manager.disconnect("correct_answer", Callable(self, "_on_quiz_correct"))
+	dialogue_manager.disconnect("wrong_answer",   Callable(self, "_on_quiz_wrong"))
+	
+	$FadeLayer.visible = true
+	$FadeLayer/AnimationPlayer.play("fade_out")
+	await $FadeLayer/AnimationPlayer.animation_finished
+	
+	GameManager.current_level = max(GameManager.current_level, 2)
+	GameManager.has_completed_game2 = true
+	GameManager.return_point = "game2" 
+	
 	get_tree().change_scene_to_file("res://scenes/MainMap.tscn")
