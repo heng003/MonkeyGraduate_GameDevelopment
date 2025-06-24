@@ -10,6 +10,7 @@ var current_choices := []
 var is_random := false
 var is_typing := false
 var skip_typing := false
+var previous_id := -1
 
 #------UI--------#
 @onready var ui_panel = self
@@ -24,6 +25,7 @@ var ui_buttons = []
 signal dialogue_finished
 signal correct_answer
 signal wrong_answer
+signal quiz_finished
 
 func _ready():
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -98,12 +100,17 @@ func _unhandled_input(event):
 
 #----Load Node-----#
 func load_node(id):
+	previous_id = current_id
 	current_id = id
 	if current_id < 0 or not try_load_node(current_id):
 		print("Could not load node with ID:", current_id)
 		end_dialogue()
 	else:
 		update_ui()
+
+	# ✅ After pressing continue on final node
+	if current_id == -1 and previous_id == 7:
+		emit_signal("quiz_finished")
 
 func try_load_node(id):
 	for node in nodes:

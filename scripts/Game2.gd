@@ -33,7 +33,14 @@ func _play_dialogue(dialogue_path: String) -> void:
 	player.can_move = false
 	dialogue_manager.visible = true
 	dialogue_manager.start_dialogue(dialogue_path)
+	
+	if dialogue_manager.dialogue_finished.is_connected(_on_dialogue_finished):
+		dialogue_manager.dialogue_finished.disconnect(_on_dialogue_finished)
 	dialogue_manager.dialogue_finished.connect(_on_dialogue_finished)
+
+	if dialogue_manager.quiz_finished.is_connected(_on_all_quizzes_correct) == false:
+		dialogue_manager.quiz_finished.connect(_on_all_quizzes_correct)
+
 
 func _on_dialogue_finished():
 	player.can_move = true
@@ -98,10 +105,7 @@ func _on_exit_dialogue_finished():
 	
 func _on_quiz_correct():
 	correct_streak += 1
-	if correct_streak >= 3:
-		_on_all_quizzes_correct()
-	else:
-		print("Streak: ", correct_streak)	
+	print("Streak: ", correct_streak)
 
 func _on_quiz_wrong():
 	correct_streak = 0
@@ -110,6 +114,7 @@ func _on_quiz_wrong():
 func _on_all_quizzes_correct() -> void:
 	dialogue_manager.disconnect("correct_answer", Callable(self, "_on_quiz_correct"))
 	dialogue_manager.disconnect("wrong_answer",   Callable(self, "_on_quiz_wrong"))
+	dialogue_manager.quiz_finished.disconnect(_on_all_quizzes_correct)
 	
 	$FadeLayer.visible = true
 	$FadeLayer/AnimationPlayer.play("fade_out")
