@@ -28,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 		sprite_2d.play()
 	else:
 		sprite_2d.stop()
-		#game_over()
+		game_over()
 		
 	position = path_follow.global_position	
 	
