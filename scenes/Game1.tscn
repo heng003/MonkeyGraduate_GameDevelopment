@@ -24386,9 +24386,9 @@ libraries = {
 }
 
 [node name="ExitTrigger" type="Area2D" parent="."]
-position = Vector2(71, -40)
+position = Vector2(1913, -38)
 script = ExtResource("16_hxw3l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
-position = Vector2(1, -2.5)
+position = Vector2(-2, -5)
 shape = SubResource("RectangleShape2D_6rmwx")
