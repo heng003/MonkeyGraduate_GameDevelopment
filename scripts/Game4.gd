@@ -31,6 +31,9 @@ func show_retry_popup():
 func _on_retry_pressed():
 	print("Retry pressed!")
 	trigger_retry_dialogue()
+	get_tree().paused = false  # Unpause before restarting
+	var current_scene = get_tree().current_scene
+	get_tree().reload_current_scene()
 	# Restart level or reset logic here
 
 func _on_back_pressed():
