@@ -21,6 +21,7 @@ func emit_retry():
 		monyet.global_position = root.get_node("Game1StartMarker").global_position
 
 	monyet.can_move = true
+	emit_signal("retry_pressed")
 	visible = false
 
 

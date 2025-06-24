@@ -27,8 +27,8 @@
 [ext_resource type="Script" uid="uid://dasmeltk5k3m5" path="res://scripts/trigger_bridge_visible.gd" id="22_0n7te"]
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="25_nrnsd"]
 [ext_resource type="AudioStream" uid="uid://xbyxbd5ovky7" path="res://assets/audio/fall_into_lake.mp3" id="27_518xq"]
-[ext_resource type="Script" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
-[ext_resource type="Script" path="res://scripts/game_2_trigger.gd" id="29_v1q5i"]
+[ext_resource type="Script" uid="uid://bi2id65tu58yr" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
+[ext_resource type="Script" uid="uid://c0sieji24b1ye" path="res://scripts/game_2_trigger.gd" id="29_v1q5i"]
 [ext_resource type="Script" uid="uid://b4hotfecj1gf8" path="res://scripts/lake_end_marker.gd" id="30_11fae"]
 [ext_resource type="PackedScene" uid="uid://bqmh3garn8q1i" path="res://ui/RetryPopUp.tscn" id="30_54x1v"]
 [ext_resource type="Script" uid="uid://kxmk4p7sy5qb" path="res://scripts/game_4_trigger.gd" id="32_ah3rs"]
@@ -82489,6 +82489,7 @@ position = Vector2(8239, 592)
 visible = false
 
 [node name="BGM" parent="." instance=ExtResource("25_nrnsd")]
+stream = null
 
 [node name="TriggerBridgeVisible" type="Area2D" parent="." node_paths=PackedStringArray("bridge_tilemap", "bridge_collision")]
 position = Vector2(8287, 774)
@@ -82585,3 +82586,6 @@ script = ExtResource("32_ah3rs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game4Trigger"]
 position = Vector2(4.25, 0.5)
 shape = SubResource("RectangleShape2D_11fae")
+
+[node name="Game4ExitMarker" type="Marker2D" parent="."]
+position = Vector2(10894, 728)

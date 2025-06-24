@@ -17,6 +17,8 @@ func _ready():
 		player.global_position = $LectureHallExitMarker.global_position
 	elif GameManager.return_point == "game2":
 		player.global_position = $LibraryExitMarker.global_position
+	elif GameManager.return_point == "game4":
+		player.global_position = $Game4ExitMarker.global_position
 	elif not GameManager.has_seen_mainmap_entry:
 		_play_dialogue(entry_dialogue_path)
 		GameManager.has_seen_mainmap_entry = true
