@@ -175,7 +175,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5y8g"]
-size = Vector2(82, 82)
+size = Vector2(70, 81)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ec2lf")
@@ -189,7 +189,7 @@ animation = &"front_idle"
 frame_progress = 0.738025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(60, 56)
+position = Vector2(64, 55.5)
 shape = SubResource("RectangleShape2D_s5y8g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
