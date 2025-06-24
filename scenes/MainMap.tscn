@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://hlsm87vuj55i"]
+[gd_scene load_steps=76 format=3 uid="uid://hlsm87vuj55i"]
 
 [ext_resource type="Script" uid="uid://11vi8y4hu4y4" path="res://scripts/MainMap.gd" id="1_5hgy3"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_a1mhp"]
@@ -27,8 +27,11 @@
 [ext_resource type="Script" uid="uid://dasmeltk5k3m5" path="res://scripts/trigger_bridge_visible.gd" id="22_0n7te"]
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="25_nrnsd"]
 [ext_resource type="AudioStream" uid="uid://xbyxbd5ovky7" path="res://assets/audio/fall_into_lake.mp3" id="27_518xq"]
-[ext_resource type="Script" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
-[ext_resource type="Script" path="res://scripts/game_2_trigger.gd" id="29_v1q5i"]
+[ext_resource type="Script" uid="uid://bi2id65tu58yr" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
+[ext_resource type="Script" uid="uid://c0sieji24b1ye" path="res://scripts/game_2_trigger.gd" id="29_v1q5i"]
+[ext_resource type="Script" uid="uid://b4hotfecj1gf8" path="res://scripts/lake_end_marker.gd" id="30_11fae"]
+[ext_resource type="PackedScene" uid="uid://bqmh3garn8q1i" path="res://ui/RetryPopUp.tscn" id="30_54x1v"]
+[ext_resource type="Script" uid="uid://kxmk4p7sy5qb" path="res://scripts/game_4_trigger.gd" id="32_ah3rs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82ayj"]
 texture = ExtResource("5_6ic70")
@@ -82439,6 +82442,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3p6r"]
 size = Vector2(67.5, 117)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ah3rs"]
+size = Vector2(53, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11fae"]
+size = Vector2(79.5, 149)
+
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_5hgy3")
 
@@ -82480,6 +82489,7 @@ position = Vector2(8239, 592)
 visible = false
 
 [node name="BGM" parent="." instance=ExtResource("25_nrnsd")]
+stream = null
 
 [node name="TriggerBridgeVisible" type="Area2D" parent="." node_paths=PackedStringArray("bridge_tilemap", "bridge_collision")]
 position = Vector2(8287, 774)
@@ -82506,9 +82516,11 @@ one_shot = true
 polygon = PackedVector2Array(8417, 720, 8479, 720, 8482, 653, 8738, 654, 8739, 716, 8797, 716, 8798, 646, 8996, 650, 8996, 715, 9182, 713, 9185, 647, 9377, 651, 9377, 717, 9511, 718, 9509, 790, 9306, 789, 9308, 727, 9249, 726, 9251, 786, 8926, 786, 8925, 724, 8866, 724, 8868, 788, 8664, 786, 8664, 722, 8549, 725, 8549, 789, 8410, 785)
 
 [node name="LakeArea" type="Area2D" parent="."]
+z_index = -100
 position = Vector2(8439, 550)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LakeArea"]
+z_index = -100
 position = Vector2(525, 173.5)
 shape = SubResource("RectangleShape2D_0n7te")
 
@@ -82553,3 +82565,27 @@ shape = SubResource("RectangleShape2D_l3p6r")
 
 [node name="LibraryExitMarker" type="Marker2D" parent="."]
 position = Vector2(7274, 617)
+
+[node name="LakeStartMarker" type="Marker2D" parent="."]
+position = Vector2(8146, 734)
+
+[node name="LakeEndMarker" type="Area2D" parent="."]
+position = Vector2(8029, 801)
+script = ExtResource("30_11fae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LakeEndMarker"]
+position = Vector2(1543.5, -75.5)
+shape = SubResource("RectangleShape2D_ah3rs")
+
+[node name="RetryPopUp" parent="." instance=ExtResource("30_54x1v")]
+
+[node name="Game4Trigger" type="Area2D" parent="."]
+position = Vector2(10183, 558)
+script = ExtResource("32_ah3rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game4Trigger"]
+position = Vector2(4.25, 0.5)
+shape = SubResource("RectangleShape2D_11fae")
+
+[node name="Game4ExitMarker" type="Marker2D" parent="."]
+position = Vector2(10894, 728)

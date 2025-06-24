@@ -47458,6 +47458,7 @@ position = Vector2(30.5, 40.5)
 shape = SubResource("RectangleShape2D_lnh4t")
 
 [node name="Game2Bgm" parent="." instance=ExtResource("14_katk2")]
+stream = null
 
 [node name="QuizBgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_a1tbd")

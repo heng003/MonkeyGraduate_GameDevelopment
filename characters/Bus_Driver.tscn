@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://2e7pg5dayw55"]
+[gd_scene load_steps=11 format=3 uid="uid://2e7pg5dayw55"]
 
 [ext_resource type="Texture2D" uid="uid://betov4c6p2n0" path="res://assets/characters/Bus_Driver/Bus_Driver_idle.png" id="1_2p8kv"]
 [ext_resource type="Script" uid="uid://4d23hd0qyfi6" path="res://characters/Bus_Driver.gd" id="1_u3wl4"]
+[ext_resource type="Script" uid="uid://cqqya205e0c5p" path="res://characters/talk_zone.gd" id="3_x7skr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3wl4"]
 atlas = ExtResource("1_2p8kv")
@@ -42,6 +43,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1rp1"]
 size = Vector2(55, 75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3wl4"]
+size = Vector2(62, 82)
+
 [node name="Bus_Driver" type="CharacterBody2D"]
 script = ExtResource("1_u3wl4")
 
@@ -57,3 +61,10 @@ frame_progress = 0.582194
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(25.5, 34.5)
 shape = SubResource("RectangleShape2D_y1rp1")
+
+[node name="TalkZone" type="Area2D" parent="."]
+script = ExtResource("3_x7skr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkZone"]
+position = Vector2(25, 35)
+shape = SubResource("RectangleShape2D_u3wl4")

@@ -2,12 +2,22 @@ extends Node2D
 
 @onready var dialogue_manager = $DialogueManager
 @onready var player = $Monyet
+@onready var fade_layer = $FadeLayer
+var has_game_ended := false
 
 var entry_dialogue_path = "Game4Entry.json"
 var retry_dialogue_path = "Game4Retry.json"
 
 func _ready():
 	_play_dialogue(entry_dialogue_path)
+
+	fade_layer.visible = true
+	fade_layer.get_node("AnimationPlayer").play("fade_in")
+	fade_layer.get_node("AnimationPlayer").animation_finished.connect(_on_fade_in_finished)
+
+func _on_fade_in_finished(anim_name: String) -> void:
+	if anim_name == "fade_in":
+		fade_layer.visible = false
 
 func trigger_retry_dialogue():
 	_play_dialogue(retry_dialogue_path)
@@ -31,11 +41,8 @@ func show_retry_popup():
 func _on_retry_pressed():
 	print("Retry pressed!")
 	trigger_retry_dialogue()
-	get_tree().paused = false  # Unpause before restarting
-	var current_scene = get_tree().current_scene
+	get_tree().paused = false
 	get_tree().reload_current_scene()
-	# Restart level or reset logic here
 
 func _on_back_pressed():
 	print("Back pressed!")
-	# Go back to menu or previous screen
