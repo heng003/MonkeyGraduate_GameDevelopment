@@ -87,7 +87,11 @@ func play_walk_animation(input_vector: Vector2):
 		
 func trigger_fall():
 	fall_into_lake_sound.play()
-	print("Game over")
+	can_move = false
+	print("Fell into lake")
+
+	var retry_popup = get_parent().get_node("RetryPopUp")# Adjust if needed
+	retry_popup.visible = true
 	
 func _on_BridgeArea_body_entered(body):
 	if body == self :

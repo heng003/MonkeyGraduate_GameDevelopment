@@ -42,6 +42,12 @@ func trigger_game2_entry_dialogue():
 
 func trigger_game2_exit_dialogue():
 	_play_dialogue(game2_exit_dialogue_path)
+	
+func trigger_game4_entry_dialogue():
+	if GameManager.has_completed_game4:
+		print("Game 4 already completed. Entry blocked.")
+		return
+	_play_dialogue(game4_entry_dialogue_path)	
 
 func _play_dialogue(dialogue_path: String) -> void:
 	current_dialogue_path = dialogue_path
@@ -71,3 +77,5 @@ func _on_dialogue_finished():
 			fade_and_switch_scene("res://scenes/Game1.tscn")
 		game2_entry_dialogue_path:
 			fade_and_switch_scene("res://scenes/Game2.tscn")
+		game4_entry_dialogue_path:
+			fade_and_switch_scene("res://scenes/Game4.tscn")
