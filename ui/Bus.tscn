@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blkja33actvwj"]
+[gd_scene load_steps=9 format=3 uid="uid://cmduw7ocd8cd1"]
 
 [ext_resource type="Script" uid="uid://bx2noli40y35c" path="res://ui/Bus.gd" id="1_irxyt"]
 [ext_resource type="Texture2D" uid="uid://o5i46vmm105m" path="res://assets/components/Bus_moving.png" id="2_3q6ey"]
@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdw60"]
-size = Vector2(388, 187)
+size = Vector2(422, 208)
 
 [node name="Bus" type="Area2D"]
 script = ExtResource("1_irxyt")
@@ -51,9 +51,9 @@ position = Vector2(200, 106)
 scale = Vector2(5.8125, 5.8125)
 sprite_frames = SubResource("SpriteFrames_n8cpr")
 animation = &"Bus_moving"
-frame = 3
-frame_progress = 0.14093
+frame = 2
+frame_progress = 0.625236
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(194, 96.5)
+position = Vector2(197, 107)
 shape = SubResource("RectangleShape2D_mdw60")
