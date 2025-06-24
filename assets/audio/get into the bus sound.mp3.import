@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxcthdcgsrrrr"
+path="res://.godot/imported/get into the bus sound.mp3-74e334e4055ffb52c386d429bee0c904.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/get into the bus sound.mp3"
+dest_files=["res://.godot/imported/get into the bus sound.mp3-74e334e4055ffb52c386d429bee0c904.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
