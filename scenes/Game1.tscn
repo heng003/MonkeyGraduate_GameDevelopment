@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bvewrac7g20ac"]
+[gd_scene load_steps=36 format=3 uid="uid://bvewrac7g20ac"]
 
 [ext_resource type="Script" uid="uid://d13btbv4gxsnf" path="res://scripts/Game1.gd" id="1_mua0o"]
 [ext_resource type="Texture2D" uid="uid://c5i4ees6rmrj3" path="res://assets/map/TopDownHouse_FloorsAndWalls.png" id="2_8xv86"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cdwcy07icxv0a" path="res://assets/map/Room_Builder_free_48x48.png" id="4_n171a"]
 [ext_resource type="PackedScene" uid="uid://cws0k4l4k5pp0" path="res://ui/Key.tscn" id="6_16hu5"]
 [ext_resource type="Texture2D" uid="uid://drah122h5frpg" path="res://assets/map/Interiors_free_48x48.png" id="7_kk1q1"]
+[ext_resource type="AudioStream" uid="uid://dupp3sd6nr333" path="res://assets/audio/bgm_game1.mp3" id="11_1earx"]
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="15_noa2v"]
 [ext_resource type="PackedScene" uid="uid://cwkqdpyqqbgxh" path="res://characters/player_selection_sound_effect.tscn" id="16_1earx"]
 [ext_resource type="AudioStream" uid="uid://dfoa3rft180vg" path="res://assets/audio/sound_game_over.wav" id="16_heyx7"]
@@ -24332,7 +24333,7 @@ visible = false
 position = Vector2(1769, 843)
 
 [node name="Game1BGM" parent="." instance=ExtResource("15_noa2v")]
-stream = null
+stream = ExtResource("11_1earx")
 
 [node name="Key2" parent="." instance=ExtResource("6_16hu5")]
 

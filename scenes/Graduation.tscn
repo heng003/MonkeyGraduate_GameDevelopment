@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dp0d6d57udouq"]
+[gd_scene load_steps=34 format=3 uid="uid://dp0d6d57udouq"]
 
 [ext_resource type="Script" uid="uid://cu7hfcqfo2xpj" path="res://scripts/Graduation.gd" id="1_26txv"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_avm52"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bla3hp4twgoh3" path="res://assets/map/Graduate smaller.png" id="7_nbiqd"]
 [ext_resource type="Texture2D" uid="uid://08ja6eu7jvxb" path="res://assets/map/Graduate curtain.png" id="8_am0a8"]
 [ext_resource type="PackedScene" uid="uid://bf0351lfeydu" path="res://characters/Vice_Chancellor.tscn" id="10_nbiqd"]
+[ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="14_pb4ia"]
+[ext_resource type="AudioStream" uid="uid://dq42j1de0ks58" path="res://assets/audio/friendly-town-fun-video-game-music-loop-256055.mp3" id="14_ycasl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oodly"]
 texture = ExtResource("2_cmxrk")
@@ -16001,3 +16003,6 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_11fae")
 }
+
+[node name="BGM" parent="." instance=ExtResource("14_pb4ia")]
+stream = ExtResource("14_ycasl")

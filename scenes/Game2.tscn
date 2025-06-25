@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dhmhyq8a0nfvq"]
+[gd_scene load_steps=47 format=3 uid="uid://dhmhyq8a0nfvq"]
 
 [ext_resource type="Script" uid="uid://d2y627vsl5dml" path="res://scripts/Game2.gd" id="1_eetn8"]
 [ext_resource type="Texture2D" uid="uid://7hv64y1xnrgv" path="res://assets/map/Tileset-Terrain2.png" id="2_a58ko"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="14_katk2"]
 [ext_resource type="Script" uid="uid://dpwy81slpbx4k" path="res://scripts/book_shelf.gd" id="15_v1moh"]
 [ext_resource type="AudioStream" uid="uid://ca7as7k0tlu6h" path="res://assets/audio/flipping-book.mp3" id="16_katk2"]
+[ext_resource type="AudioStream" uid="uid://v7qj4tnl5wn3" path="res://assets/audio/retro-game-music-245230.mp3" id="17_rjeic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mn1ld"]
 texture = ExtResource("2_a58ko")
@@ -47458,7 +47459,7 @@ position = Vector2(30.5, 40.5)
 shape = SubResource("RectangleShape2D_lnh4t")
 
 [node name="Game2Bgm" parent="." instance=ExtResource("14_katk2")]
-stream = null
+stream = ExtResource("17_rjeic")
 
 [node name="QuizBgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_a1tbd")
