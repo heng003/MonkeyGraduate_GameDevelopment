@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dbupi0givadq"]
+[gd_scene load_steps=29 format=3 uid="uid://dbupi0givadq"]
 
 [ext_resource type="Script" uid="uid://dcoyfjm7kb3f8" path="res://scripts/Game4.gd" id="1_6tlln"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="1_vpobs"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://lnn1hadk53ha" path="res://characters/Cat_Obstacles/Cow_Cat_Box_1.tscn" id="13_ik7b7"]
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="14_1pbvu"]
 [ext_resource type="AudioStream" uid="uid://cxcthdcgsrrrr" path="res://assets/audio/get into the bus sound.mp3" id="15_ik7b7"]
+[ext_resource type="AudioStream" uid="uid://chad582fdutxo" path="res://assets/audio/so-happy-with-my-8-bit-game-301275.mp3" id="15_xjfss"]
 [ext_resource type="AudioStream" uid="uid://c3ncnlx2x0gam" path="res://assets/audio/sound-missed-the-bus.mp3" id="16_3if4t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qp144"]
@@ -2881,7 +2882,7 @@ position = Vector2(864, 725)
 loop = false
 
 [node name="BGM" parent="." instance=ExtResource("14_1pbvu")]
-stream = null
+stream = ExtResource("15_xjfss")
 
 [node name="SoundGetIntoBus" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ik7b7")

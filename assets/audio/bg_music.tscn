@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2jjqfjw1qjus"]
-
-[ext_resource type="AudioStream" uid="uid://dm7rl1rkytd7b" path="res://assets/audio/8-bit-game-music-122259.mp3" id="1_p7vlg"]
+[gd_scene format=3 uid="uid://b2jjqfjw1qjus"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_p7vlg")
 autoplay = true
