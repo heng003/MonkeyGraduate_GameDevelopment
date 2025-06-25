@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://hlsm87vuj55i"]
+[gd_scene load_steps=80 format=3 uid="uid://hlsm87vuj55i"]
 
 [ext_resource type="Script" uid="uid://11vi8y4hu4y4" path="res://scripts/MainMap.gd" id="1_5hgy3"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_a1mhp"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://b4hotfecj1gf8" path="res://scripts/lake_end_marker.gd" id="30_11fae"]
 [ext_resource type="PackedScene" uid="uid://bqmh3garn8q1i" path="res://ui/RetryPopUp.tscn" id="30_54x1v"]
 [ext_resource type="Script" uid="uid://kxmk4p7sy5qb" path="res://scripts/game_4_trigger.gd" id="32_ah3rs"]
+[ext_resource type="Script" uid="uid://bungu3if6cfi" path="res://scripts/graduation_trigger.gd" id="33_uxayb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82ayj"]
 texture = ExtResource("5_6ic70")
@@ -82448,6 +82449,15 @@ size = Vector2(53, 201)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11fae"]
 size = Vector2(79.5, 149)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxayb"]
+size = Vector2(65, 201.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1a65w"]
+size = Vector2(68, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brkwc"]
+size = Vector2(111, 131)
+
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_5hgy3")
 
@@ -82589,3 +82599,24 @@ shape = SubResource("RectangleShape2D_11fae")
 
 [node name="Game4ExitMarker" type="Marker2D" parent="."]
 position = Vector2(10894, 728)
+
+[node name="Game3Zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game3Zone"]
+position = Vector2(7939, 726.875)
+shape = SubResource("RectangleShape2D_uxayb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Game3Zone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game3Zone/StaticBody2D"]
+position = Vector2(7940, 726)
+shape = SubResource("RectangleShape2D_1a65w")
+
+[node name="GraduationTrigger" type="Area2D" parent="." node_paths=PackedStringArray("fade_layer")]
+position = Vector2(11597, 537)
+script = ExtResource("33_uxayb")
+fade_layer = NodePath("../FadeLayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GraduationTrigger"]
+position = Vector2(0, -44.5)
+shape = SubResource("RectangleShape2D_brkwc")

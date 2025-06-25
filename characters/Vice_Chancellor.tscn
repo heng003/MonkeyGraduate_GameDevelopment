@@ -39,10 +39,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggmvb"]
-size = Vector2(50, 84)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk750"]
+size = Vector2(62, 84)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Vice_Chancellor" type="CharacterBody2D"]
 script = ExtResource("1_pk750")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -53,6 +53,8 @@ sprite_frames = SubResource("SpriteFrames_10wvj")
 frame = 3
 frame_progress = 0.301787
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(29, 44)
-shape = SubResource("RectangleShape2D_ggmvb")
+[node name="DialogueTriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTriggerArea"]
+position = Vector2(30, 42)
+shape = SubResource("RectangleShape2D_pk750")
