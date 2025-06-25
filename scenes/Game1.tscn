@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b2jjqfjw1qjus" path="res://assets/audio/bg_music.tscn" id="15_noa2v"]
 [ext_resource type="PackedScene" uid="uid://cwkqdpyqqbgxh" path="res://characters/player_selection_sound_effect.tscn" id="16_1earx"]
 [ext_resource type="AudioStream" uid="uid://dfoa3rft180vg" path="res://assets/audio/sound_game_over.wav" id="16_heyx7"]
-[ext_resource type="Script" path="res://scripts/exit_trigger.gd" id="16_hxw3l"]
+[ext_resource type="Script" uid="uid://ogw0ry4gg73c" path="res://scripts/exit_trigger.gd" id="16_hxw3l"]
 [ext_resource type="AudioStream" uid="uid://c5bs7p6t4etwi" path="res://assets/audio/sound_waiting_response.wav" id="17_hxw3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kk1q1"]
@@ -24332,6 +24332,7 @@ visible = false
 position = Vector2(1769, 843)
 
 [node name="Game1BGM" parent="." instance=ExtResource("15_noa2v")]
+stream = null
 
 [node name="Key2" parent="." instance=ExtResource("6_16hu5")]
 
