@@ -29,10 +29,10 @@
 [ext_resource type="AudioStream" uid="uid://xbyxbd5ovky7" path="res://assets/audio/fall_into_lake.mp3" id="27_518xq"]
 [ext_resource type="Script" uid="uid://bi2id65tu58yr" path="res://scripts/game_1_trigger.gd" id="28_l3p6r"]
 [ext_resource type="Script" uid="uid://c0sieji24b1ye" path="res://scripts/game_2_trigger.gd" id="29_v1q5i"]
-[ext_resource type="Script" uid="uid://b4hotfecj1gf8" path="res://scripts/lake_end_marker.gd" id="30_11fae"]
+[ext_resource type="Script" path="res://scripts/lake_end_marker.gd" id="30_11fae"]
 [ext_resource type="PackedScene" uid="uid://bqmh3garn8q1i" path="res://ui/RetryPopUp.tscn" id="30_54x1v"]
-[ext_resource type="Script" uid="uid://kxmk4p7sy5qb" path="res://scripts/game_4_trigger.gd" id="32_ah3rs"]
-[ext_resource type="Script" uid="uid://bungu3if6cfi" path="res://scripts/graduation_trigger.gd" id="33_uxayb"]
+[ext_resource type="Script" path="res://scripts/game_4_trigger.gd" id="32_ah3rs"]
+[ext_resource type="Script" path="res://scripts/graduation_trigger.gd" id="33_uxayb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82ayj"]
 texture = ExtResource("5_6ic70")
