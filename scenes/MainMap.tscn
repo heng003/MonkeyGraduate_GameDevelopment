@@ -82499,7 +82499,6 @@ position = Vector2(8239, 592)
 visible = false
 
 [node name="BGM" parent="." instance=ExtResource("25_nrnsd")]
-stream = null
 
 [node name="TriggerBridgeVisible" type="Area2D" parent="." node_paths=PackedStringArray("bridge_tilemap", "bridge_collision")]
 position = Vector2(8287, 774)
