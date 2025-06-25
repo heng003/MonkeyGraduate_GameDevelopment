@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dp0d6d57udouq"]
+[gd_scene load_steps=32 format=3 uid="uid://dp0d6d57udouq"]
 
 [ext_resource type="Script" uid="uid://cu7hfcqfo2xpj" path="res://scripts/Graduation.gd" id="1_26txv"]
 [ext_resource type="PackedScene" uid="uid://dj6loigslowyu" path="res://characters/Monyet.tscn" id="2_avm52"]
@@ -15907,6 +15907,58 @@ sources/6 = SubResource("TileSetAtlasSource_vr383")
 sources/7 = SubResource("TileSetAtlasSource_6ux4m")
 sources/8 = SubResource("TileSetAtlasSource_g57ev")
 
+[sub_resource type="Animation" id="Animation_v1q5i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_54x1v"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l3p6r"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11fae"]
+_data = {
+&"RESET": SubResource("Animation_v1q5i"),
+&"fade_in": SubResource("Animation_54x1v"),
+&"fade_out": SubResource("Animation_l3p6r")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_26txv")
 
@@ -15933,3 +15985,19 @@ visible = false
 
 [node name="Vice_Chancellor" parent="." instance=ExtResource("10_nbiqd")]
 position = Vector2(590, 228)
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_11fae")
+}

@@ -17,13 +17,12 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Monyet":
 		anim_sprite.play("Pressed")
-		
+
 		if disappear_timer.is_stopped() == false:
 			disappear_timer.stop()
-		# Make all bridge tiles visible when button is pressed
+			
 		bridge_tilemap.visible = true
-		# Clear any previously active tiles
-		#active_bridge_tiles.clear()
+		bridge_collision.disabled = false  # 🛠️ RE-ENABLE COLLISION HERE
 
 func _on_body_exited(body):
 	if body.name == "Monyet":

@@ -13,6 +13,8 @@ var game4_exit_dialogue_path = "MainMapGame4Exit.json"
 var current_dialogue_path = ""
 
 func _ready():
+	
+	call_deferred("_update_game3_barrier")
 	if GameManager.return_point == "game1":
 		player.global_position = $LectureHallExitMarker.global_position
 	elif GameManager.return_point == "game2":
@@ -81,3 +83,16 @@ func _on_dialogue_finished():
 			fade_and_switch_scene("res://scenes/Game2.tscn")
 		game4_entry_dialogue_path:
 			fade_and_switch_scene("res://scenes/Game4.tscn")
+			
+func _update_game3_barrier():
+	var is_completed = GameManager.has_completed_game2
+
+	var barrier_body = $Game3Zone/StaticBody2D
+	var barrier_shape = barrier_body.get_node("CollisionShape2D")
+
+	if not is_completed:
+		barrier_body.visible = true
+		barrier_shape.set_deferred("disabled", false)
+	else:
+		barrier_body.visible = false
+		barrier_shape.set_deferred("disabled", true)

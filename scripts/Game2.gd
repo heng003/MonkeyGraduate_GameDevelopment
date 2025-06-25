@@ -99,6 +99,8 @@ func _on_exit_dialogue_finished():
 	await $FadeLayer/AnimationPlayer.animation_finished
 
 	GameManager.current_level = max(GameManager.current_level, 2)
+	print("Marking Game 2 as completed.")
+	GameManager.has_completed_game2 = true
 	GameManager.returning_from_game2 = true
 	GameManager.return_point = "game2"
 	get_tree().change_scene_to_file("res://scenes/MainMap.tscn")
@@ -116,12 +118,12 @@ func _on_all_quizzes_correct() -> void:
 	dialogue_manager.disconnect("wrong_answer",   Callable(self, "_on_quiz_wrong"))
 	dialogue_manager.quiz_finished.disconnect(_on_all_quizzes_correct)
 	
+	GameManager.has_completed_game2 = true
+	GameManager.current_level = max(GameManager.current_level, 2)
+	GameManager.return_point = "game2" 
+	
 	$FadeLayer.visible = true
 	$FadeLayer/AnimationPlayer.play("fade_out")
 	await $FadeLayer/AnimationPlayer.animation_finished
-	
-	GameManager.current_level = max(GameManager.current_level, 2)
-	GameManager.has_completed_game2 = true
-	GameManager.return_point = "game2" 
 	
 	get_tree().change_scene_to_file("res://scenes/MainMap.tscn")
